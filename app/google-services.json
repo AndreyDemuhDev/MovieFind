@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "103600642207",
+    "project_id": "moviefind-e11d1",
+    "storage_bucket": "moviefind-e11d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103600642207:android:050cb5ca6f4a9328bc6aaa",
+        "android_client_info": {
+          "package_name": "com.pidzama.moviefind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103600642207-vodc3ohbuklog6l9j07ri5llshnf3lg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzP28Xpws574s1tnf1qBh_g7QwtNck9So"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103600642207-vodc3ohbuklog6l9j07ri5llshnf3lg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

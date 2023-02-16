@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.screens.main.movie.DetailsMovieFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageBackgroundMovie"
+                android:layout_width="match_parent"
+                android:layout_height="505dp"
+                android:alpha="0.3"
+                android:background="@drawable/background_gradient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageButton
+                    android:id="@+id/buttonBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/button_rectangle_shape"
+                    android:src="@drawable/arrow_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/titleMovie"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/titleMovie"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="This Movie Title"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonAddFavorite"
+                    app:layout_constraintStart_toEndOf="@+id/buttonBack"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardImageMovie"
+                    android:layout_width="205dp"
+                    android:layout_height="287dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleMovie"
+                    app:strokeColor="@color/red"
+                    app:strokeWidth="2dp">
+
+                    <ImageView
+                        android:id="@+id/imageMovie"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageButton
+                    android:id="@+id/buttonAddFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/button_rectangle_shape"
+                    android:src="@drawable/ic_favoritepage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/titleMovie"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+                <TextView
+                    android:id="@+id/genreMovie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/cardImageMovie"
+                    app:layout_constraintStart_toStartOf="@+id/cardImageMovie"
+                    app:layout_constraintTop_toBottomOf="@+id/cardImageMovie"
+                    tools:text="GENRE" />
+
+                <TextView
+                    android:id="@+id/premier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/genreMovie"
+                    app:layout_constraintStart_toStartOf="@+id/genreMovie"
+                    app:layout_constraintTop_toBottomOf="@+id/genreMovie"
+                    tools:text="premiere" />
+
+
+                <LinearLayout
+                    android:id="@+id/layoutStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/premier"
+                    app:layout_constraintStart_toStartOf="@+id/premier"
+                    app:layout_constraintTop_toBottomOf="@+id/premier">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status: "
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/statusMovie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ended"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:alpha="0.7"
+                    android:background="@drawable/bg_image_movie"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/layoutStatus"
+                    app:layout_constraintStart_toStartOf="@+id/layoutStatus"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutStatus">
+
+                    <RatingBar
+                        android:id="@+id/movieRatingImage"
+                        style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:paddingStart="2dp"
+                        android:paddingTop="3dp"
+                        android:progress="@integer/material_motion_duration_long_1"
+                        android:stepSize="0.5"
+                        android:theme="@style/RatingBar" />
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="6dp"
+                        android:textColor="@color/orange"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="7.1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="@+id/linearRating"
+                    app:layout_constraintStart_toStartOf="@+id/linearRating"
+                    app:layout_constraintTop_toBottomOf="@+id/linearRating">
+
+                    <ImageButton
+                        android:id="@+id/buttonWebSite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_rectangle_shape"
+                        android:src="@drawable/ic_language" />
+
+                    <ImageButton
+                        android:id="@+id/buttonDownload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/button_rectangle_shape"
+                        android:src="@drawable/ic_download" />
+
+                    <ImageButton
+                        android:id="@+id/buttonShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/button_rectangle_shape"
+                        android:src="@drawable/ic_share" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/descriptioTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Description show"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="15dp"
+                android:justificationMode="inter_word"
+                android:text="description"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptioTextView" />
+
+            <TextView
+                android:id="@+id/cast_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Star cast"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textDescription"
+                app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerCast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:paddingEnd="45dp"
+                app:layout_constraintStart_toStartOf="@+id/cast_text"
+                app:layout_constraintTop_toBottomOf="@+id/cast_text"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_cast" />
+
+            <TextView
+                android:id="@+id/seasons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Seasons"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/recyclerCast"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerCast" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerSeasons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:paddingEnd="40dp"
+                app:layout_constraintStart_toStartOf="@+id/seasons"
+                app:layout_constraintTop_toBottomOf="@+id/seasons"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_season" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

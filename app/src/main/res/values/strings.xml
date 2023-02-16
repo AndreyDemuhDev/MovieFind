@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">MovieFind</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="description_best_movie">We provide a service with an extensive database of modern films, series and TV shows</string>
+    <string name="description_save_movie">Save your favorite shows to go back to watching (but you can not watch, sorry)</string>
+    <string name="description_share_movie">Share your favorite shows with your friends and your least favorite shows with your enemies</string>
+    <string name="description_enjoy_app">Enjoy the process and the app</string>
+    <string name="Unknown">Unknown</string>
+    <string name="choose_app">Chosen app</string>
+
+    //Авторизация
+    <string name="logout_account">logout their profile??</string>
+    <string name="btn_logout"><b>Logout</b></string>
+    <string name="btn_no"><b>No</b></string>
+    <string name="logout_successful"><b>successful</b></string>
+    <string name="registration_failed"><b>Registration failed</b></string>
+    <string name="sign_up_failed"><b>SignUp failed</b></string>
+
+    //Валидация
+    <string name="name_blank"><b>Field name must not be empty</b></string>
+    <string name="password_blank"><b>Field password must not be empty</b></string>
+    <string name="email_blank"><b>Field email must not be empty</b></string>
+    <string name="email_wrong_type">Invalid email form</string>
+    <string name="password_min_size">Minimum number of characters 6</string>
+    <string name="password_max_size">Maximum number of characters 12</string>
+    <string name="password_lower_case_symbol">Password must contain at least one lowercase letter</string>
+    <string name="password_upper_case_symbol">Password must contain at least one capital letter</string>
+    <string name="password_spec_symbol">Password must contain at least one special character (@#$%^&amp;+=)</string>
+    <string name="password_number">Password must contain at least one number</string>
+</resources>

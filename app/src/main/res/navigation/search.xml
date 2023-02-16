@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.movie.DetailsMovieFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="titleMovie"
+            app:argType="string" />
+        <argument
+            android:name="idMovie"
+            app:argType="integer" />
+        <argument
+            android:name="ratingMovie"
+            app:argType="long" />
+        <argument
+            android:name="descriptionMovie"
+            app:argType="string" />
+        <argument
+            android:name="primieredMovie"
+            app:argType="string" />
+        <argument
+            android:name="genresMovie"
+            app:argType="string[]" />
+        <argument
+            android:name="officialSite"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="urlShow"
+            app:argType="string" />
+        <argument
+            android:name="statusMovie"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailsFragment_to_detailSeasonFragment"
+            app:destination="@id/detailSeasonFragment" />
+        <action
+            android:id="@+id/action_detailsFragment_to_castFragment"
+            app:destination="@id/castFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailSeasonFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.seasons.DetailSeasonFragment"
+        android:label="DetailSeasonFragment" >
+        <argument
+            android:name="numberSeasons"
+            app:argType="integer" />
+        <argument
+            android:name="imageSeasons"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="idSeason"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailSeasonFragment_to_detailEpisodeFragment"
+            app:destination="@id/detailEpisodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/castFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.cast.CastFragment"
+        android:label="CastFragment" >
+        <argument
+            android:name="idPerson"
+            app:argType="integer" />
+        <argument
+            android:name="namePerson"
+            app:argType="string" />
+        <argument
+            android:name="countryPerson"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="birthdayPerson"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailEpisodeFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.episode.DetailEpisodeFragment"
+        android:label="DetailEpisodeFragment" >
+        <argument
+            android:name="idEpisode"
+            app:argType="integer" />
+        <argument
+            android:name="seasonEpisode"
+            app:argType="integer" />
+        <argument
+            android:name="numberEpisode"
+            app:argType="integer" />
+        <argument
+            android:name="ratingEpisode"
+            app:argType="long" />
+        <argument
+            android:name="descriptionEpisode"
+            app:argType="string" />
+        <argument
+            android:name="urlEpisode"
+            app:argType="string" />
+    </fragment>
+</navigation>

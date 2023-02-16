@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/favorite"
+    app:startDestination="@id/favoriteFragment">
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailsFragment2"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.movie.DetailsMovieFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_castFragment2"
+            app:destination="@id/castFragment" />
+        <action
+            android:id="@+id/action_detailsFragment_to_detailSeasonFragment2"
+            app:destination="@id/detailSeasonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/castFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.cast.CastFragment"
+        android:label="CastFragment" />
+    <fragment
+        android:id="@+id/detailSeasonFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.seasons.DetailSeasonFragment"
+        android:label="DetailSeasonFragment" >
+        <action
+            android:id="@+id/action_detailSeasonFragment2_to_detailEpisodeFragment2"
+            app:destination="@id/detailEpisodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailEpisodeFragment"
+        android:name="com.pidzama.moviefind.ui.screens.main.episode.DetailEpisodeFragment"
+        android:label="DetailEpisodeFragment" />
+</navigation>
