@@ -5,7 +5,6 @@ import com.pidzama.moviefind.data.model.cast.Person
 import com.pidzama.moviefind.data.model.episodes.EpisodesItem
 import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.data.model.seasons.SeasonsItem
-import retrofit2.Call
 
 import retrofit2.Response
 import retrofit2.http.GET
@@ -39,9 +38,6 @@ interface ApiService {
 
     @GET("people/{id}")
     suspend fun getInfoPerson(@Path("id") id: Int): Response<Person>
-
-    @GET("people/{id}/castcredits")
-    suspend fun getListMoviePerson(@Path("id")  id: Int) : Response<ArrayList<Movie>>
 
     @GET("seasons/{id}/episodes")
     suspend fun getAllEpisodes(@Path("id") id: Int): Response<ArrayList<EpisodesItem>>

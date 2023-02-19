@@ -4,18 +4,18 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_homepage"
-        android:title="Home" />
+        android:title="@string/home" />
     <item
         android:id="@+id/search"
         android:icon="@drawable/ic_searchpage"
-        android:title="Search" />
+        android:title="@string/search" />
     <item
         android:id="@+id/favorite"
         android:icon="@drawable/ic_favoritepage"
-        android:title="Favorite" />
+        android:title="@string/favorite" />
     <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_profilepage"
-        android:title="Profile" />
+        android:title="@string/profile" />
 
 </menu>

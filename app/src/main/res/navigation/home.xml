@@ -9,7 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="com.pidzama.moviefind.ui.screens.main.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/detailsFragment"
         android:name="com.pidzama.moviefind.ui.screens.main.movie.DetailsMovieFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" >
+        tools:layout="@layout/fragment_details">
         <argument
             android:name="titleMovie"
             app:argType="string" />
@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/detailSeasonFragment"
         android:name="com.pidzama.moviefind.ui.screens.main.seasons.DetailSeasonFragment"
-        android:label="DetailSeasonFragment" >
+        android:label="DetailSeasonFragment">
         <argument
             android:name="numberSeasons"
             app:argType="integer" />
@@ -75,7 +75,7 @@
     <fragment
         android:id="@+id/detailEpisodeFragment"
         android:name="com.pidzama.moviefind.ui.screens.main.episode.DetailEpisodeFragment"
-        android:label="DetailEpisodeFragment" >
+        android:label="DetailEpisodeFragment">
         <argument
             android:name="idEpisode"
             app:argType="integer" />
@@ -99,7 +99,7 @@
         android:id="@+id/castFragment"
         android:name="com.pidzama.moviefind.ui.screens.main.cast.CastFragment"
         android:label="fragment_cast"
-        tools:layout="@layout/fragment_cast" >
+        tools:layout="@layout/fragment_cast">
         <argument
             android:name="idPerson"
             app:argType="integer" />

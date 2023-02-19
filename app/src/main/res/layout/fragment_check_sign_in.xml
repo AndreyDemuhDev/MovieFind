@@ -9,24 +9,24 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="157dp"
-        android:layout_height="146dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="@dimen/dp_157"
+        android:layout_height="@dimen/dp_146"
+        android:layout_marginTop="@dimen/dp_200"
+        android:contentDescription="@string/todo"
         android:src="@drawable/logo_mf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="@dimen/dp_220"
         android:background="@drawable/bg_button"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:text="Sign In"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingRight="@dimen/dp_40"
+        android:text="@string/sign_in"
         android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -35,7 +35,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/dp_40"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/buttonSignIn"
         app:layout_constraintStart_toStartOf="@+id/buttonSignIn"
@@ -45,18 +45,18 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="I already have an accaunt?"
+            android:text="@string/i_already_have_an_account"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="@dimen/sp_16" />
 
         <TextView
             android:id="@+id/buttonSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="Sign Up"
-            android:textColor="@color/teal_700"
-            android:textSize="14sp"
+            android:layout_marginStart="@dimen/dp_4"
+            android:text="@string/sign_up"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/sp_16"
             android:textStyle="bold" />
 
     </LinearLayout>

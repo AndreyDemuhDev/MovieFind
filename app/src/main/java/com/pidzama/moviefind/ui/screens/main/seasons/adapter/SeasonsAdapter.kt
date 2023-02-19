@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.ListAdapter
 import com.pidzama.moviefind.data.model.seasons.SeasonsItem
 import com.pidzama.moviefind.databinding.ItemSeasonBinding
 
-
 class SeasonsAdapter(
     private val onClick: (seasons: SeasonsItem) -> Unit
 ) : ListAdapter<SeasonsItem, SeasonsViewHolder>(SeasonsDiffUtil()) {

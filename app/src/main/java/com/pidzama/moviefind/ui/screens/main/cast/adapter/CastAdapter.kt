@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.pidzama.moviefind.data.model.cast.CastItem
-import com.pidzama.moviefind.data.model.episodes.EpisodesItem
 import com.pidzama.moviefind.databinding.ItemCastBinding
-
 
 class CastAdapter(
     private val onClick: (person: CastItem) -> Unit

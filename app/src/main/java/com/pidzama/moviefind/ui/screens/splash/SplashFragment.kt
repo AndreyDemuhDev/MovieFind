@@ -6,10 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import com.pidzama.moviefind.ui.screens.main.MainActivity
 import com.pidzama.moviefind.databinding.FragmentSplashBinding
-import com.pidzama.moviefind.repository.AuthorisationRepository
+import com.pidzama.moviefind.repository.FirebaseAuthRepository
 import com.pidzama.moviefind.ui.screens.main.MainActivityArgs
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -21,12 +20,12 @@ import kotlinx.coroutines.launch
 class SplashFragment : Fragment() {
 
     private lateinit var binding: FragmentSplashBinding
-    private val authRepository = AuthorisationRepository()
+    private val authRepository = FirebaseAuthRepository()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSplashBinding.inflate(layoutInflater, container, false)
         return (binding.root)
 
@@ -34,25 +33,24 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(isAdded) {
-            launchMainActivity()
-        }
+
+        launchMainActivity()
     }
 
     private fun launchMainActivity() {
         val intent = Intent(requireContext(), MainActivity::class.java)
-//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-
-        val args = MainActivityArgs(isSignedIn = launchSignInFragment())
+        val args = MainActivityArgs(isSignedIn = launchCheckSignInFragment())
         intent.putExtras(args.toBundle())
 
-        CoroutineScope(Dispatchers.Main).launch {
-            delay(3000)
-            startActivity(intent)
+        if (isAdded) {
+            CoroutineScope(Dispatchers.Main).launch {
+                delay(3000)
+                startActivity(intent)
+            }
         }
     }
 
-    private fun launchSignInFragment(): Boolean {
+    private fun launchCheckSignInFragment(): Boolean {
         return authRepository.isUserLogin()
     }
 }

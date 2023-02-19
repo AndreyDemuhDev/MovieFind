@@ -22,12 +22,12 @@ class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
     private val viewModelAuth: AuthorisationViewModel by viewModels()
-
+    private val viewModelProfile: ProfileViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
         return binding.root
 
@@ -37,6 +37,9 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.nametext.text = viewModelProfile.getUserName()
+        binding.ageText.text = viewModelProfile.getUserAge()
+
         binding.buttonEditProfile.setOnClickListener {
             changeNavFragment().navigate(R.id.editProfileFragment)
         }
@@ -44,6 +47,9 @@ class ProfileFragment : Fragment() {
         binding.buttonLogout.setOnClickListener {
             onClickLogout()
         }
+
+        binding.nametext.text = viewModelAuth.getName()
+
 
     }
 
@@ -59,6 +65,7 @@ class ProfileFragment : Fragment() {
 
     fun onClickLogout() {
         AlertDialog.Builder(requireContext())
+            .setCancelable(false)
             .setMessage(R.string.logout_account)
             .setPositiveButton(R.string.btn_logout) { _, _ ->
                 viewModelAuth.logout()
@@ -69,6 +76,7 @@ class ProfileFragment : Fragment() {
             .setNegativeButton(R.string.btn_no) { _, _ ->
 
             }
+            .create()
             .show()
     }
 }

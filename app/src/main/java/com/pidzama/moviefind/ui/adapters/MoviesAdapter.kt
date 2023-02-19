@@ -3,8 +3,6 @@ package com.pidzama.moviefind.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
-import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.DiffUtil
 import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.databinding.ItemMovieBinding
 

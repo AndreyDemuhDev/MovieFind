@@ -1,6 +1,5 @@
 package com.pidzama.moviefind.ui.screens.main.movie
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,6 +11,7 @@ import com.pidzama.moviefind.repository.MovieRepository
 import com.pidzama.moviefind.repository.SeasonsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,55 +23,33 @@ class DetailsViewModel @Inject constructor(
 ) : ViewModel() {
 
     var currentMovie = MutableLiveData<Movie>()
-
-    val listSeasonsOneMovie = MutableLiveData<ArrayList<SeasonsItem>>()
-
-    val currentCast = MutableLiveData<ArrayList<CastItem>>()
+    val listSeasonsCurrentMovie = MutableStateFlow<ArrayList<SeasonsItem>>(arrayListOf())
+    val listCurrentMovieCast = MutableStateFlow<ArrayList<CastItem>>(arrayListOf())
 
     fun getMovie(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             val response = movieRepository.getMovie(id)
             if (response.isSuccessful) {
                 currentMovie.postValue(response.body())
-                Log.d("AAA", "RESPONSE Movie: ${response.body()}")
             } else {
                 response.errorBody()
             }
         }
     }
 
-    fun getAllSeasons(id: Int) {
+    fun getSeasonsMovie(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = seasonsRepository.getAllSeasons(id)
-            if (response.isSuccessful) {
-                listSeasonsOneMovie.postValue(response.body())
-                Log.d("AAA", "RESPONSE Seasons: ${response.body()}")
-            } else {
-                Log.d("AAA", "RESPONSE Seasons: ${response.errorBody()}")
-                response.errorBody()
+            seasonsRepository.getAllSeasonsMovie(id).collect {
+                listSeasonsCurrentMovie.emit(it)
             }
         }
     }
 
-    fun getCast(id: Int) {
+    fun getCastMovie(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = castRepository.getCast(id)
-            if (response.isSuccessful) {
-                currentCast.postValue(response.body())
-                Log.d("AAA", "RESPONSE Cast: ${response.body()}")
-            } else {
-                Log.d("AAA", "RESPONSE Cast: ${response.errorBody()}")
-                response.errorBody()
+            castRepository.getMovieCast(id).collect() {
+                listCurrentMovieCast.emit(it)
             }
         }
     }
-
-//    fun getSeasonsFlow(id: Int){
-//        viewModelScope.launch(Dispatchers.IO){
-//            seasonsRepository.getSeasonsFlow(id).collect{
-//                seasonList.emit(it)
-//                Log.d("A",it.toString() )
-//            }
-//        }
-//    }
 }

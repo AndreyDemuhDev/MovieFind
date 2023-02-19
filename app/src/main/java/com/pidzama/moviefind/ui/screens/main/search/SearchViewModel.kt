@@ -19,18 +19,18 @@ class SearchViewModel @Inject constructor(
     val listSearchMovie = MutableLiveData<Movie>()
 
     @SuppressLint("SuspiciousIndentation")
-    fun setSearchMovie(query: String){
+    fun setSearchMovie(query: String) {
         viewModelScope.launch {
-           val response = movieRepository.getSearchMovie(query)
-                if (response.isSuccessful){
-                    listSearchMovie.postValue(response.body())
-                } else{
-                    response.errorBody()
-                }
+            val response = movieRepository.getSearchMovie(query)
+            if (response.isSuccessful) {
+                listSearchMovie.postValue(response.body())
+            } else {
+                response.errorBody()
+            }
         }
     }
 
-    fun getSearchMovie(): LiveData<Movie>{
+    fun getSearchMovie(): LiveData<Movie> {
         return listSearchMovie
     }
 

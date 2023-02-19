@@ -25,7 +25,7 @@ class SignUpFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSignUpBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -38,10 +38,13 @@ class SignUpFragment : Fragment() {
             if (validate()) {
                 authViewModel.registrationUser(
                     binding.emailEditText.text.toString(),
-                    binding.passwordEditText.text.toString()
-                ) {
-                    findNavController().navigate(R.id.tabsFragment)
-                }
+                    binding.passwordEditText.text.toString(),
+                    {
+                        findNavController().navigate(R.id.tabsFragment)
+                    }, {
+                        binding.errorText.text = resources.getText(R.string.email_is_busy)
+                    }
+                )
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -66,8 +69,7 @@ class SignUpFragment : Fragment() {
     private fun validatePassword(): String? {
         val passwordInputLayout = binding.inputPassword
         passwordInputLayout.editText?.let {
-            val result = validatePassword(it.text.toString())
-            return when (result) {
+            return when (val result = validatePassword(it.text.toString())) {
                 is Invalid -> {
                     passwordInputLayout.error = this.getString(result.textError)
                     this.getString(result.textError)
@@ -83,8 +85,7 @@ class SignUpFragment : Fragment() {
     private fun validateEmail(): String? {
         val emailInputLayout = binding.inputEmail
         emailInputLayout.editText?.let {
-            val result = validateEmail(it.text.toString())
-            return when (result) {
+            return when (val result = validateEmail(it.text.toString())) {
                 is Invalid -> {
                     emailInputLayout.error = this.getString(result.textError)
                     this.getString(result.textError)
@@ -100,8 +101,7 @@ class SignUpFragment : Fragment() {
     private fun validateName(): String? {
         val nameInputLayout = binding.inputName
         nameInputLayout.editText?.let {
-            val result = validateName(it.text.toString())
-            return when (result) {
+            return when (val result = validateName(it.text.toString())) {
                 is Invalid -> {
                     nameInputLayout.error = this.getString(result.textError)
                     this.getString(result.textError)

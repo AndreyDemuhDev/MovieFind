@@ -18,7 +18,7 @@ class CheckSignInFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCheckSignInBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -27,7 +27,7 @@ class CheckSignInFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.buttonSignUp.setOnClickListener{
+        binding.buttonSignUp.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }
 

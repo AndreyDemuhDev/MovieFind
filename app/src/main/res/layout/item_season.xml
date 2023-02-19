@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="180dp"
-    android:layout_height="200dp"
     xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_180"
+    android:layout_height="@dimen/dp_200"
+    android:layout_margin="@dimen/dp_2"
     android:backgroundTint="@color/black"
-    app:cardCornerRadius="14dp"
-    app:cardElevation="6dp"
-    android:layout_margin="2dp"
+    app:cardCornerRadius="@dimen/dp_14"
+    app:cardElevation="@dimen/dp_6"
     app:strokeColor="@color/red"
-    app:strokeWidth="1dp">
+    app:strokeWidth="@dimen/dp_2">
 
     <ImageView
         android:id="@+id/imageSeason"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="@dimen/dp_160"
+        android:contentDescription="@string/todo"
         android:scaleType="fitXY"
-        tool:srcCompat="@tools:sample/avatars"/>
+        tool:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/primary_bg"
-        android:layout_weight="1"
-        android:paddingTop="6dp"
         android:layout_gravity="bottom"
-        android:orientation="horizontal">
+        android:layout_weight="1"
+        android:background="@color/primary_bg"
+        android:orientation="horizontal"
+        android:paddingTop="6dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Season "
+            android:text="@string/season"
             android:textAlignment="textEnd"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimen/sp_18" />
 
         <TextView
             android:id="@+id/numberSeason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tool:text="1"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimen/sp_18"
+            tool:text="1" />
 
     </LinearLayout>
 

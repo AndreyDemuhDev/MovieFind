@@ -30,7 +30,7 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModelSearch.listSearchMovie.observe(viewLifecycleOwner){
+        viewModelSearch.listSearchMovie.observe(viewLifecycleOwner) {
             setListSearchMovie(it)
         }
 

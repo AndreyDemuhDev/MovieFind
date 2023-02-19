@@ -9,13 +9,11 @@
 
     <TextView
         android:id="@+id/textViewEditProfile"
+        style="@style/bold24white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Edit Profile"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginTop="@dimen/dp_40"
+        android:text="@string/edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,34 +22,33 @@
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="@dimen/sp_24"
         android:background="@drawable/button_rectangle_shape"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/todo"
         android:src="@drawable/arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewEditProfile"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginTop="@dimen/dp_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewEditProfile">
-
 
         <ImageView
             android:id="@+id/imageProfile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_button"
+            android:contentDescription="@string/todo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/buttonChangePhoto"
@@ -59,10 +56,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:background="@drawable/button_rectangle_shape"
+            android:contentDescription="@string/todo"
             android:src="@drawable/ic_change_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageProfile" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -70,32 +67,32 @@
         android:id="@+id/textNameProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="NameProfile"
+        android:layout_marginTop="@dimen/dp_10"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="@dimen/sp_18"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:text="NameProfile" />
 
     <TextView
         android:id="@+id/emailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Тут будет Email"
+        android:layout_marginTop="@dimen/dp_6"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="@dimen/sp_16"
         app:layout_constraintEnd_toEndOf="@+id/textNameProfile"
         app:layout_constraintStart_toStartOf="@+id/textNameProfile"
-        app:layout_constraintTop_toBottomOf="@+id/textNameProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/textNameProfile"
+        tools:text="Email" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/dp_350"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/dp_40"
         android:alpha="0.7"
         android:background="@drawable/bg_input_layout"
         android:orientation="vertical"
@@ -103,95 +100,198 @@
         app:layout_constraintStart_toStartOf="@+id/emailText"
         app:layout_constraintTop_toBottomOf="@+id/emailText">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputName"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="36dp"
-            android:background="@drawable/bg_input_layout"
-            android:hint="Name"
-            app:boxCornerRadiusBottomEnd="20dp"
-            app:boxCornerRadiusBottomStart="20dp"
-            app:boxCornerRadiusTopEnd="20dp"
-            app:boxCornerRadiusTopStart="20dp">
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameEditText"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imageName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/bg_icon_profile_page"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_profilepage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:text="@string/name_hint"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintStart_toEndOf="@+id/imageName"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputAge"
+            <ImageView
+                android:id="@+id/imageArrowName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_50"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/arrow_next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="36dp"
-            android:background="@drawable/bg_input_layout"
-            android:hint="Age"
-            app:boxCornerRadiusBottomEnd="20dp"
-            app:boxCornerRadiusBottomStart="20dp"
-            app:boxCornerRadiusTopEnd="20dp"
-            app:boxCornerRadiusTopStart="20dp">
+            android:layout_height="@dimen/dp_3"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@color/red"
+            tools:ignore="SmallSp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ageEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputCountry"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_age"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="36dp"
-            android:background="@drawable/bg_input_layout"
-            android:hint="Country"
-            app:boxCornerRadiusBottomEnd="20dp"
-            app:boxCornerRadiusBottomStart="20dp"
-            app:boxCornerRadiusTopEnd="20dp"
-            app:boxCornerRadiusTopStart="20dp">
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/countryEditText"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imageAge"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/bg_icon_profile_page"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_age"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:text="@string/age"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintStart_toEndOf="@+id/imageAge"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imageArrowAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_50"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/arrow_next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputPhone"
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_input_layout"
-            android:hint="Phone number"
-            app:boxCornerRadiusBottomEnd="20dp"
-            app:boxCornerRadiusBottomStart="20dp"
-            app:boxCornerRadiusTopEnd="20dp"
-            app:boxCornerRadiusTopStart="20dp">
+            android:layout_height="@dimen/dp_3"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@color/red"
+            tools:ignore="SmallSp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phoneEditText"
-                android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_country"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <ImageView
+                android:id="@+id/imageCountry"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="phone" />
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/bg_icon_profile_page"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_country"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:text="@string/country"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintStart_toEndOf="@+id/imageCountry"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageArrowCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_50"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/arrow_next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_3"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@color/red"
+            tools:ignore="SmallSp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/imagePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/bg_icon_profile_page"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:text="@string/phone_number"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintStart_toEndOf="@+id/imagePhone"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageArrowPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_107"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_50"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/arrow_next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
@@ -199,11 +299,11 @@
         android:id="@+id/button_save_change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dp_120"
         android:background="@drawable/bg_button"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:text="Save change"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingRight="@dimen/dp_40"
+        android:text="@string/save_change"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"

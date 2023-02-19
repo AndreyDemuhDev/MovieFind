@@ -1,7 +1,6 @@
 package com.pidzama.moviefind.ui.screens.main.seasons.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.pidzama.moviefind.data.model.seasons.SeasonInfo
 import com.pidzama.moviefind.data.model.seasons.SeasonsItem
 
 class SeasonsDiffUtil : DiffUtil.ItemCallback<SeasonsItem>() {

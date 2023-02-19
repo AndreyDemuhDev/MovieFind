@@ -10,7 +10,6 @@ class ViewPagerViewModel @Inject constructor(
     private val sharedPref: SharedPreferenceRepository
 ) : ViewModel() {
 
-
     fun isNoFirstStart() {
         sharedPref.setNoFirstStart()
     }

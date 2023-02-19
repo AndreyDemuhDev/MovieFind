@@ -9,6 +9,7 @@ import com.pidzama.moviefind.repository.EpisodeRepository
 import com.pidzama.moviefind.repository.SeasonsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,7 +21,7 @@ class SeasonViewModel @Inject constructor(
 
     val currentOneSeasonsMovie = MutableLiveData<SeasonsItem>()
 
-    val listAllEpisodes = MutableLiveData<ArrayList<EpisodesItem>>()
+    val listAllEpisodesSeason = MutableStateFlow<ArrayList<EpisodesItem>>(arrayListOf())
 
     fun getOneSeason(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -33,13 +34,10 @@ class SeasonViewModel @Inject constructor(
         }
     }
 
-    fun getListAllEpisodes(id: Int) {
+    fun getAllEpisodesMovie(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = episodeRepository.getAllEpisodes(id)
-            if (response.isSuccessful) {
-                listAllEpisodes.postValue(response.body())
-            } else {
-                response.errorBody()
+            episodeRepository.getAllEpisodesSeason(id).collect() {
+                listAllEpisodesSeason.emit(it)
             }
         }
     }

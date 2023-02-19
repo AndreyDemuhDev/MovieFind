@@ -9,7 +9,7 @@
         android:id="@+id/favoriteFragment"
         android:name="com.pidzama.moviefind.ui.screens.main.favorite.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" >
+        tools:layout="@layout/fragment_favorite">
         <action
             android:id="@+id/action_favoriteFragment_to_detailsFragment2"
             app:destination="@id/detailsFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/detailsFragment"
         android:name="com.pidzama.moviefind.ui.screens.main.movie.DetailsMovieFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" >
+        tools:layout="@layout/fragment_details">
         <action
             android:id="@+id/action_detailsFragment_to_castFragment2"
             app:destination="@id/castFragment" />
@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/detailSeasonFragment"
         android:name="com.pidzama.moviefind.ui.screens.main.seasons.DetailSeasonFragment"
-        android:label="DetailSeasonFragment" >
+        android:label="DetailSeasonFragment">
         <action
             android:id="@+id/action_detailSeasonFragment2_to_detailEpisodeFragment2"
             app:destination="@id/detailEpisodeFragment" />

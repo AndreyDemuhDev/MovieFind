@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:background="@drawable/button_rectangle_shape"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/arrow_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/constraintLayout"
@@ -35,61 +36,58 @@
                 android:id="@+id/personalInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Personal profile"
+                android:text="@string/personal_profile"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="@dimen/sp_24"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardImagePerson"
-                android:layout_width="140dp"
-                android:layout_height="170dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="24dp"
-                app:cardCornerRadius="40dp"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="@dimen/dp_170"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_10"
+                app:cardCornerRadius="@dimen/dp_40"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/personalInfo"
                 app:strokeColor="@color/red"
-                app:strokeWidth="2dp">
+                app:strokeWidth="@dimen/dp_2">
 
                 <ImageView
                     android:id="@+id/imagePerson"
                     android:layout_width="match_parent"
-                    android:scaleType="fitXY"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitXY" />
+
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
                 android:id="@+id/linearName"
-                android:layout_width="220dp"
+                android:layout_width="@dimen/dp_220"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="@dimen/dp_50"
                 app:layout_constraintStart_toEndOf="@+id/cardImagePerson"
                 app:layout_constraintTop_toTopOf="@+id/personalInfo">
 
                 <TextView
+                    style="@style/white16bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name: "
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white" />
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:text="@string/name" />
 
                 <TextView
                     android:id="@+id/namePerson"
+                    style="@style/white16bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/dp_4"
                     android:maxLines="2"
-                    android:text="NA"
-                    android:layout_marginStart="4dp"
-                    android:textColor="@color/white" />
+                    tools:text="NA" />
 
             </LinearLayout>
 
@@ -97,88 +95,75 @@
                 android:id="@+id/linearBirthday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/dp_20"
                 app:layout_constraintStart_toEndOf="@+id/cardImagePerson"
                 app:layout_constraintTop_toBottomOf="@+id/linearName">
 
                 <TextView
+                    style="@style/white16bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Birthday: "
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white" />
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:text="@string/birthday" />
 
                 <TextView
                     android:id="@+id/birthdayPerson"
+                    style="@style/white16bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="28.10.1992 "
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white"/>
+                    android:layout_marginStart="@dimen/dp_10"
+                    tools:text="28.10.1992" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearCountry"
-                android:layout_width="220dp"
+                android:layout_width="@dimen/dp_220"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/dp_20"
                 app:layout_constraintStart_toEndOf="@+id/cardImagePerson"
                 app:layout_constraintTop_toBottomOf="@+id/linearBirthday">
 
                 <TextView
+                    style="@style/white16bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Country: "
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white" />
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:text="@string/country" />
 
                 <TextView
                     android:id="@+id/countryPerson"
+                    style="@style/white16bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/dp_10"
                     android:maxLines="2"
-                    android:text="USA "
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white"/>
+                    tools:text="USA " />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:id="@+id/linearMovieList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/dp_20"
                 app:layout_constraintStart_toEndOf="@+id/cardImagePerson"
                 app:layout_constraintTop_toBottomOf="@+id/linearCountry">
 
                 <TextView
+                    style="@style/white16bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="All movie: "
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white" />
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:text="@string/all_movie" />
 
                 <TextView
                     android:id="@+id/countMovie"
+                    style="@style/white16bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="25"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white"/>
+                    android:layout_marginStart="@dimen/dp_10"
+                    tools:text="25" />
 
             </LinearLayout>
 
@@ -188,11 +173,11 @@
             android:id="@+id/allMovieText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:text="All movie"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/all_movies"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="@dimen/sp_22"
             app:layout_constraintStart_toStartOf="@+id/constraintLayout"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -200,16 +185,14 @@
             android:id="@+id/recyclerMoviePerson"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/allMovieText"
             tools:itemCount="2"
             tools:listitem="@layout/item_movie" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.core.widget.NestedScrollView>

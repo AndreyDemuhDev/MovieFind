@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="text_16_bold">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
     <style name="ProgressBarColor" parent="Theme.AppCompat.Light">
         <item name="colorAccent">@color/red</item>
     </style>
@@ -14,6 +8,41 @@
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="colorControlNormal">@color/white</item>
         <item name="colorControlActivated">@color/orange</item>
+    </style>
+
+    <style name="white16bold">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="bold24white">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="white12">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="white12bold">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="white14bold">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="white20bold">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

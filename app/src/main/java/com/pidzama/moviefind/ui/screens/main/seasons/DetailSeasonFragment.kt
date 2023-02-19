@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.pidzama.moviefind.R
 import com.pidzama.moviefind.data.model.episodes.EpisodesItem
 import com.pidzama.moviefind.databinding.FragmentDetailSeasonBinding
 import com.pidzama.moviefind.ui.screens.main.episode.adapter.EpisodeAdapter
@@ -25,7 +27,7 @@ class DetailSeasonFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDetailSeasonBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -39,20 +41,25 @@ class DetailSeasonFragment : Fragment() {
 
         viewModelSeason.run {
             currentOneSeasonsMovie.observe(viewLifecycleOwner) {
-                Glide.with(requireContext())
-                    .load(it.image?.medium)
-                    .centerCrop()
-                    .into(binding.imageSeason)
+                if (it.image?.medium == null) {
+                    binding.imageSeason.setImageResource(R.drawable.ic_no_image)
+                } else {
+                    Glide.with(binding.imageSeason)
+                        .load(it.image.medium)
+                        .into(binding.imageSeason)
+                }
                 binding.seasonNumber.text = it.number.toString()
                 binding.numberEpisode.text = it.episodeOrder.toString()
             }
         }
         viewModelSeason.getOneSeason(args.idSeason)
 
-        viewModelSeason.listAllEpisodes.observe(viewLifecycleOwner) {
-            setListEpisodes(it)
+        lifecycleScope.launchWhenStarted {
+            viewModelSeason.listAllEpisodesSeason.collect {
+                setListEpisodes(it)
+            }
         }
-        viewModelSeason.getListAllEpisodes(args.idSeason)
+        viewModelSeason.getAllEpisodesMovie(args.idSeason)
     }
 
     private fun setListEpisodes(list: ArrayList<EpisodesItem>) {

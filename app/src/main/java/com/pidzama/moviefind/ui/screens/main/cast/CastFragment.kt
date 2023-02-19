@@ -8,13 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.pidzama.moviefind.R
-import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.databinding.FragmentCastBinding
-import com.pidzama.moviefind.ui.screens.main.search.SearchAdapter
-import com.pidzama.moviefind.ui.screens.main.search.SearchFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,7 +23,7 @@ class CastFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCastBinding.inflate(layoutInflater, container, false)
         return binding.root
     }

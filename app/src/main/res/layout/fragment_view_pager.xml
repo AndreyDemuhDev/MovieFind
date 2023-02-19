@@ -11,11 +11,11 @@
         android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Get Started"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:layout_marginBottom="@dimen/dp_20"
         android:background="@drawable/bg_view_pager_button"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:text="@string/get_started"
         app:layout_constraintBottom_toTopOf="@+id/indicator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -23,7 +23,7 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dp_0"
         app:layout_constraintBottom_toTopOf="@+id/indicator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,17 +34,16 @@
         android:id="@+id/indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
+        android:paddingBottom="@dimen/dp_20"
         app:dotsColor="@color/white"
-        app:dotsCornerRadius="8dp"
-        app:dotsSize="10dp"
-        app:dotsSpacing="6dp"
+        app:dotsCornerRadius="@dimen/dp_8"
+        app:dotsSize="@dimen/dp_10"
+        app:dotsSpacing="@dimen/dp_6"
         app:dotsWidthFactor="2.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPager"
         app:selectedDotColor="@color/red" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

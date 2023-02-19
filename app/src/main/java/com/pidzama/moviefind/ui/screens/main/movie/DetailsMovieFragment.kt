@@ -1,7 +1,6 @@
 package com.pidzama.moviefind.ui.screens.main.movie
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
@@ -13,13 +12,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.pidzama.moviefind.R
 import com.pidzama.moviefind.data.model.cast.CastItem
-import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.data.model.seasons.SeasonsItem
 import com.pidzama.moviefind.databinding.FragmentDetailsBinding
 import com.pidzama.moviefind.ui.screens.main.cast.adapter.CastAdapter
@@ -36,9 +35,10 @@ class DetailsMovieFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDetailsBinding.inflate(layoutInflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,6 +46,10 @@ class DetailsMovieFragment : Fragment() {
 
         binding.buttonBack.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        binding.buttonAddFavorite.setOnClickListener {
+
         }
 
         binding.buttonDownload.setOnClickListener {
@@ -79,26 +83,32 @@ class DetailsMovieFragment : Fragment() {
                     .centerCrop()
                     .into(binding.imageBackgroundMovie)
                 binding.rating.text = it.rating.average.toFloat().toString()
-                binding.textDescription.text = Html.fromHtml(it.summary, Html.FROM_HTML_MODE_COMPACT)
+                binding.textDescription.text =
+                    Html.fromHtml(it.summary, Html.FROM_HTML_MODE_COMPACT)
                 binding.genreMovie.text = it.genres.take(2).toString()
                 binding.titleMovie.text = it.name
                 binding.premier.text = it.premiered
-                binding.movieRatingImage.rating = it.rating.average.toFloat()/2
+                binding.movieRatingImage.rating = it.rating.average.toFloat() / 2
                 setColorStatus()
                 binding.statusMovie.text = it.status
             }
         }
 
-        viewModel.listSeasonsOneMovie.observe(viewLifecycleOwner) {
-            setListSeasons(it)
+        lifecycleScope.launchWhenStarted {
+            viewModel.listSeasonsCurrentMovie.collect {
+                setListSeasons(it)
+            }
         }
-        viewModel.currentCast.observe(viewLifecycleOwner) {
-            setListCast(it)
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.listCurrentMovieCast.collect {
+                setListCast(it)
+            }
         }
 
         viewModel.getMovie(args.idMovie)
-        viewModel.getAllSeasons(args.idMovie)
-        viewModel.getCast(args.idMovie)
+        viewModel.getSeasonsMovie(args.idMovie)
+        viewModel.getCastMovie(args.idMovie)
     }
 
     private fun setListSeasons(list: ArrayList<SeasonsItem>) {
@@ -157,15 +167,17 @@ class DetailsMovieFragment : Fragment() {
         }
     }
 
-    private fun showAlertDialog(){
-        val alertDialog = Dialog(requireContext())
-        alertDialog.setCancelable(true)
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Ooops!")
-        builder.setMessage("Video not available at the moment, please try again later")
-        builder.setNegativeButton("OK"){dialog, i ->
-            Toast.makeText(requireContext(), "Thanks for understanding", Toast.LENGTH_SHORT).show()
-        }
-        builder.show()
+    private fun showAlertDialog() {
+        AlertDialog.Builder(requireContext())
+            .setCancelable(false)
+            .setTitle(R.string.sorry)
+            .setMessage(R.string.video_not_available)
+            .setNegativeButton(R.string.OK) { _, _ ->
+                Toast.makeText(requireContext(), R.string.thanks, Toast.LENGTH_SHORT)
+                    .show()
+            }
+            .create()
+            .show()
     }
+
 }

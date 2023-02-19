@@ -4,11 +4,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import com.pidzama.moviefind.data.model.user.User
+import com.pidzama.moviefind.utils.Constants.Firebase.PATH_USER
 
-class AuthorisationRepository {
+class FirebaseAuthRepository {
 
     private val firebaseAuth: FirebaseAuth = Firebase.auth
-    private val userBranchFirebase = FirebaseDatabase.getInstance().getReference("User")
+    private val userBranchFirebase = FirebaseDatabase.getInstance().getReference(PATH_USER)
     private var userName = ""
     private var userAge = ""
     private var userCountry = ""
@@ -16,6 +18,22 @@ class AuthorisationRepository {
 
     fun isUserLogin(): Boolean {
         return firebaseAuth.currentUser != null
+    }
+
+    fun getUserName(): String {
+        return userName
+    }
+
+    fun getUserCountry(): String {
+        return userCountry
+    }
+
+    fun getUserPhone(): String {
+        return userPhone
+    }
+
+    fun getUserAge(): String {
+        return userAge
     }
 
     fun logout() {
@@ -26,15 +44,17 @@ class AuthorisationRepository {
         return firebaseAuth.currentUser?.email ?: ""
     }
 
-
     fun signInUser(
         email: String,
         password: String,
-        onSuccess: () -> Unit
+        onSuccess: () -> Unit,
+        onError: () -> Unit
     ) {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 onSuccess()
+            } else {
+                task.exception?.let { onError() }
             }
         }
     }
@@ -42,33 +62,35 @@ class AuthorisationRepository {
     fun registrationUser(
         email: String,
         password: String,
-        onSuccess: () -> Unit
+        onSuccess: () -> Unit,
+        onError: () -> Unit
     ) {
         firebaseAuth.createUserWithEmailAndPassword(
             email, password
         ).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                updateUserInfo()
+                createUser()
                 onSuccess()
+            } else {
+                task.exception?.let { onError() }
             }
         }
     }
 
-    fun updateUserInfo() {
+    fun createUser() {
         val uid = firebaseAuth.uid
-        val dateRegistration = System.currentTimeMillis()
-        val hashMap: HashMap<String, Any?> = HashMap()
-        hashMap["uid"] = uid
-        hashMap["email"] = getEmail()
-        hashMap["name"] = userName
-        hashMap["age"] = userAge
-        hashMap["country"] = userCountry
-        hashMap["phone"] = userPhone
-        hashMap["imageProfile"] = ""
-        hashMap["dateRegistration"] = dateRegistration
+        val user = User(
+            id = uid,
+            name = getUserName(),
+            age = getUserAge(),
+            email = getEmail(),
+            country = getUserCountry(),
+            phone = getUserPhone(),
+            image = ""
+        )
         val saveChangesUser = userBranchFirebase
         saveChangesUser.child(uid!!)
-            .setValue(hashMap)
+            .setValue(user)
             .addOnSuccessListener {
 
             }

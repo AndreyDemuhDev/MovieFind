@@ -14,7 +14,6 @@ import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
 import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.databinding.FragmentHomeBinding
-import com.pidzama.moviefind.repository.AuthorisationRepository
 import com.pidzama.moviefind.ui.adapters.MoviesAdapter
 import com.pidzama.moviefind.ui.screens.auth.login.AuthorisationViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,7 +30,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -49,7 +48,6 @@ class HomeFragment : Fragment() {
             binding.progress.isVisible = state.refresh == LoadState.Loading
         }
         binding.emailUser.text = authViewModel.getEmail()
-//        binding.nameUser.text = authViewModel.getName()
     }
 
     private suspend fun initMovieAdapter(list: PagingData<Movie>) {
