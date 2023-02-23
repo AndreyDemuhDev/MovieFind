@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.screens.auth.CheckSignInFragment">
+    tools:context=".ui.auth.CheckSignInFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageLogo"
         android:layout_width="@dimen/dp_157"
         android:layout_height="@dimen/dp_146"
         android:layout_marginTop="@dimen/dp_200"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@null"
         android:src="@drawable/logo_mf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,37 +28,34 @@
         android:paddingRight="@dimen/dp_40"
         android:text="@string/sign_in"
         android:textColor="@color/red"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/imageLogo"
+        app:layout_constraintStart_toStartOf="@+id/imageLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textViewAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_40"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/buttonSignIn"
-        app:layout_constraintStart_toStartOf="@+id/buttonSignIn"
-        app:layout_constraintTop_toBottomOf="@id/buttonSignIn">
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/i_already_have_an_account"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toStartOf="@id/buttonSignUp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/i_already_have_an_account"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_16" />
-
-        <TextView
-            android:id="@+id/buttonSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_4"
-            android:text="@string/sign_up"
-            android:textColor="@color/yellow"
-            android:textSize="@dimen/sp_16"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/buttonSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_4"
+        android:text="@string/sign_up"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewAccount"
+        app:layout_constraintTop_toTopOf="@+id/textViewAccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

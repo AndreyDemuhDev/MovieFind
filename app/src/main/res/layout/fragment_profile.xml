@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.screens.main.profile.ProfileFragment">
+    tools:context=".ui.main.profile.ProfileFragment">
 
     <TextView
         android:id="@+id/textViewLogin"
@@ -67,7 +67,7 @@
                 android:id="@+id/imageProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </com.google.android.material.card.MaterialCardView>
@@ -173,7 +173,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/dp_10"
-            android:contentDescription="@string/todo"
+            android:contentDescription="@null"
             android:src="@drawable/ic_edit_profile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -214,7 +214,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_profilepage" />
 
             <TextView
@@ -231,7 +231,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_140"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next" />
 
         </LinearLayout>
@@ -259,7 +259,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_password" />
 
             <TextView
@@ -276,7 +276,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_53"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next" />
 
         </LinearLayout>
@@ -293,7 +293,6 @@
         app:layout_constraintEnd_toEndOf="@+id/linearAccount"
         app:layout_constraintStart_toStartOf="@+id/linearAccount"
         app:layout_constraintTop_toBottomOf="@+id/linearAccount">
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -317,7 +316,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_notifications" />
 
             <TextView
@@ -334,7 +333,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_110"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next" />
 
         </LinearLayout>
@@ -360,7 +359,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_language" />
 
             <TextView
@@ -377,7 +376,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_125"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next" />
 
         </LinearLayout>
@@ -404,7 +403,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_error" />
 
             <TextView
@@ -421,7 +420,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dp_110"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next" />
         </LinearLayout>
 

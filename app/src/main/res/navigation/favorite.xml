@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.pidzama.moviefind.ui.screens.main.favorite.FavoriteFragment"
+        android:name="com.pidzama.moviefind.ui.main.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.pidzama.moviefind.ui.screens.main.movie.DetailsMovieFragment"
+        android:name="com.pidzama.moviefind.ui.main.movie.DetailsMovieFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details">
         <action
@@ -28,11 +28,11 @@
     </fragment>
     <fragment
         android:id="@+id/castFragment"
-        android:name="com.pidzama.moviefind.ui.screens.main.cast.CastFragment"
+        android:name="com.pidzama.moviefind.ui.main.cast.CastFragment"
         android:label="CastFragment" />
     <fragment
         android:id="@+id/detailSeasonFragment"
-        android:name="com.pidzama.moviefind.ui.screens.main.seasons.DetailSeasonFragment"
+        android:name="com.pidzama.moviefind.ui.main.seasons.DetailSeasonFragment"
         android:label="DetailSeasonFragment">
         <action
             android:id="@+id/action_detailSeasonFragment2_to_detailEpisodeFragment2"
@@ -40,6 +40,6 @@
     </fragment>
     <fragment
         android:id="@+id/detailEpisodeFragment"
-        android:name="com.pidzama.moviefind.ui.screens.main.episode.DetailEpisodeFragment"
+        android:name="com.pidzama.moviefind.ui.main.episode.DetailEpisodeFragment"
         android:label="DetailEpisodeFragment" />
 </navigation>

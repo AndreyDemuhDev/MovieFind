@@ -23,8 +23,8 @@
             android:id="@+id/photo_star"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/todo"
-            android:scaleType="fitXY"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
             tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.cardview.widget.CardView>
