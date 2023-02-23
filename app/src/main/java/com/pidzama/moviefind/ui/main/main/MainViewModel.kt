@@ -1,4 +1,4 @@
-package com.pidzama.moviefind.ui.main
+package com.pidzama.moviefind.ui.main.main
 
 import androidx.lifecycle.ViewModel
 import com.pidzama.moviefind.repository.SharedPreferenceRepository

@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_sign_in" />
     <fragment
         android:id="@+id/tabsFragment"
-        android:name="com.pidzama.moviefind.ui.main.TabsFragment"
+        android:name="com.pidzama.moviefind.ui.main.tabs.TabsFragment"
         android:label="fragment_tabs"
         tools:layout="@layout/fragment_tabs">
         <action
