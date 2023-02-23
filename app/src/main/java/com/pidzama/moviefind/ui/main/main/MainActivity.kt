@@ -1,4 +1,4 @@
-package com.pidzama.moviefind.ui.main
+package com.pidzama.moviefind.ui.main.main
 
 import android.content.Intent
 import android.content.IntentFilter

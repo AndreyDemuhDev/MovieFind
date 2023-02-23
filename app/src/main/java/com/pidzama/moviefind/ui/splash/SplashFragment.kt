@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.pidzama.moviefind.databinding.FragmentSplashBinding
 import com.pidzama.moviefind.repository.FirebaseAuthRepository
-import com.pidzama.moviefind.ui.main.MainActivity
-import com.pidzama.moviefind.ui.main.MainActivityArgs
+import com.pidzama.moviefind.ui.main.main.MainActivity
+import com.pidzama.moviefind.ui.main.main.MainActivityArgs
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
