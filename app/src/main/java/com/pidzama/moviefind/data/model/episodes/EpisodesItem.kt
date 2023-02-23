@@ -12,7 +12,7 @@ data class EpisodesItem(
     val rating: Rating,
     val runtime: Int,
     val season: Int,
-    val summary: String,
+    val summary: String?,
     val type: String,
     val url: String
 )

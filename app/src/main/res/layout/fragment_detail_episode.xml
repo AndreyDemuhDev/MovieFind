@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.screens.main.movie.DetailsMovieFragment">
+    tools:context=".ui.main.movie.DetailsMovieFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:layout_height="@dimen/dp_505"
                 android:alpha="0.3"
                 android:background="@drawable/background_gradient"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dp_24"
                     android:background="@drawable/button_rectangle_shape"
-                    android:contentDescription="@string/todo"
+                    android:contentDescription="@null"
                     android:src="@drawable/arrow_back"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -93,7 +93,7 @@
                         android:id="@+id/imageEpisode"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="@string/todo"
+                        android:contentDescription="@null"
                         android:scaleType="fitXY" />
 
                 </com.google.android.material.card.MaterialCardView>
@@ -142,7 +142,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_6"
-                    android:alpha="0.7"
                     android:background="@drawable/bg_image_movie"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="@+id/nameEpisode"
@@ -154,7 +153,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
-                        android:contentDescription="@string/todo"
+                        android:contentDescription="@null"
                         android:src="@drawable/ic_rating" />
 
                     <TextView
@@ -170,49 +169,52 @@
                         tools:text="7.1" />
                 </LinearLayout>
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/button_play"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_6"
-                    android:gravity="center"
-                    app:layout_constraintEnd_toEndOf="@+id/linearRating"
-                    app:layout_constraintStart_toStartOf="@+id/linearRating"
-                    app:layout_constraintTop_toBottomOf="@+id/linearRating">
+                    android:layout_marginStart="@dimen/dp_110"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/bg_button"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingEnd="@dimen/dp_15"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:text="@string/play"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    app:drawableStartCompat="@drawable/ic_play"
+                    app:layout_constraintEnd_toStartOf="@id/button_download"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearRating"
+                    app:layout_constraintVertical_chainStyle="packed" />
 
-                    <TextView
-                        android:id="@+id/button_play"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_button"
-                        android:drawablePadding="@dimen/dp_5"
-                        android:paddingStart="@dimen/dp_10"
-                        android:paddingTop="@dimen/dp_5"
-                        android:paddingEnd="@dimen/dp_15"
-                        android:paddingBottom="@dimen/dp_5"
-                        android:text="@string/play"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/sp_18"
-                        app:drawableStartCompat="@drawable/ic_play" />
+                <ImageButton
+                    android:id="@+id/button_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/button_rectangle_shape"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_download"
+                    app:layout_constraintEnd_toStartOf="@id/button_share"
+                    app:layout_constraintStart_toEndOf="@id/button_play"
+                    app:layout_constraintTop_toBottomOf="@id/linearRating" />
 
-                    <ImageButton
-                        android:id="@+id/button_download"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp_10"
-                        android:background="@drawable/button_rectangle_shape"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/ic_download" />
+                <ImageButton
+                    android:id="@+id/button_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_110"
+                    android:background="@drawable/button_rectangle_shape"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_share"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/button_download"
+                    app:layout_constraintTop_toBottomOf="@id/linearRating" />
 
-                    <ImageButton
-                        android:id="@+id/button_share"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp_10"
-                        android:background="@drawable/button_rectangle_shape"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/ic_share" />
-
-                </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

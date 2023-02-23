@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.screens.main.profile.EditProfileFragment">
+    tools:context=".ui.main.profile.EditProfileFragment">
 
     <TextView
         android:id="@+id/textViewEditProfile"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/sp_24"
         android:background="@drawable/button_rectangle_shape"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@null"
         android:src="@drawable/arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewEditProfile"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_button"
-            android:contentDescription="@string/todo"
+            android:contentDescription="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:background="@drawable/button_rectangle_shape"
-            android:contentDescription="@string/todo"
+            android:contentDescription="@null"
             android:src="@drawable/ic_change_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageProfile" />
@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_profilepage"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_8"
                 android:layout_marginEnd="@dimen/dp_50"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_age"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -184,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_8"
                 android:layout_marginEnd="@dimen/dp_50"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -212,7 +212,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_country"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -234,7 +234,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_8"
                 android:layout_marginEnd="@dimen/dp_50"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -263,7 +263,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_20"
                 android:background="@drawable/bg_icon_profile_page"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/ic_phone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -286,7 +286,7 @@
                 android:layout_marginStart="@dimen/dp_107"
                 android:layout_marginTop="@dimen/dp_8"
                 android:layout_marginEnd="@dimen/dp_50"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_next"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

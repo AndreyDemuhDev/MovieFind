@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.screens.auth.login.SignInFragment">
+    tools:context=".ui.auth.login.SignInFragment">
 
     <TextView
         android:id="@+id/textSignIn"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_24"
         android:background="@drawable/button_rectangle_shape"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@null"
         android:src="@drawable/arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textSignIn"

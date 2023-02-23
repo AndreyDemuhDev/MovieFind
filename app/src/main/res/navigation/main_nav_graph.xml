@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.pidzama.moviefind.ui.screens.auth.CheckSignInFragment"
+        android:name="com.pidzama.moviefind.ui.auth.CheckSignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_check_sign_in">
         <action
@@ -24,12 +24,12 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.pidzama.moviefind.ui.screens.auth.login.SignInFragment"
+        android:name="com.pidzama.moviefind.ui.auth.login.SignInFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_in" />
     <fragment
         android:id="@+id/tabsFragment"
-        android:name="com.pidzama.moviefind.ui.screens.main.TabsFragment"
+        android:name="com.pidzama.moviefind.ui.main.TabsFragment"
         android:label="fragment_tabs"
         tools:layout="@layout/fragment_tabs">
         <action
@@ -38,12 +38,12 @@
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.pidzama.moviefind.ui.screens.main.profile.EditProfileFragment"
+        android:name="com.pidzama.moviefind.ui.main.profile.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.pidzama.moviefind.ui.screens.intro.ViewPagerFragment"
+        android:name="com.pidzama.moviefind.ui.intro.ViewPagerFragment"
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager">
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.pidzama.moviefind.ui.screens.auth.login.SignUpFragment"
+        android:name="com.pidzama.moviefind.ui.auth.login.SignUpFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_sign_up" />
 </navigation>

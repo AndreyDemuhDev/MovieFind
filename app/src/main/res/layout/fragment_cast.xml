@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.screens.main.movie.DetailsMovieFragment">
+    tools:context=".ui.main.movie.DetailsMovieFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:background="@drawable/button_rectangle_shape"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@null"
                 android:src="@drawable/arrow_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/constraintLayout"
@@ -60,7 +60,7 @@
                     android:id="@+id/imagePerson"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/todo"
+                    android:contentDescription="@null"
                     android:scaleType="fitXY" />
 
             </com.google.android.material.card.MaterialCardView>

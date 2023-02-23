@@ -15,8 +15,8 @@
         android:id="@+id/imageSeason"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_160"
-        android:contentDescription="@string/todo"
-        android:scaleType="fitXY"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
         tool:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout

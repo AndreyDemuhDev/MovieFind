@@ -25,5 +25,6 @@ data class Movie(
     val updated: Int,
     val url: String,
     val webChannel: Any,
-    val weight: Int
+    val weight: Int,
+    var isFavorite: Boolean = false
 ) : Serializable

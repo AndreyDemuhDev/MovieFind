@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.screens.main.search.SearchFragment">
+    tools:context=".ui.main.search.SearchFragment">
 
     <TextView
         android:id="@+id/searchTitle"
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp_10"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@null"
         android:src="@drawable/ic_searchpage"
         app:layout_constraintBottom_toBottomOf="@+id/inputSearch"
         app:layout_constraintEnd_toEndOf="@+id/inputSearch"
