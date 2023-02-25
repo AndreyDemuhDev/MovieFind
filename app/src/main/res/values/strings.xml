@@ -95,6 +95,8 @@
     <string name="OK">OK</string>
     <string name="thanks">Thanks for understanding</string>
     <string name="noDescription">No description</string>
+    <string name="movie_add_favorite">"Фильм добавлен в избранное"</string>
+    <string name="movie_delete_favorite">"Фильм удален из избранного"</string>
 
 
 

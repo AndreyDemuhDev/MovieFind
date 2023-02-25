@@ -14,7 +14,7 @@ import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
 import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.databinding.FragmentHomeBinding
-import com.pidzama.moviefind.ui.main.movie.adapters.MoviesAdapter
+import com.pidzama.moviefind.ui.main.home.adapters.MoviesAdapter
 import com.pidzama.moviefind.ui.auth.login.AuthorisationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest

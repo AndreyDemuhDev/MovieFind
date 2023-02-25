@@ -1,4 +1,4 @@
-package com.pidzama.moviefind.ui.main.movie.adapters
+package com.pidzama.moviefind.ui.main.home.adapters
 
 import androidx.recyclerview.widget.DiffUtil
 import com.pidzama.moviefind.data.model.movies.Movie

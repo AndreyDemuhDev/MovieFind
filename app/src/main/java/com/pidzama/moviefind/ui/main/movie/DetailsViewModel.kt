@@ -26,6 +26,8 @@ class DetailsViewModel @Inject constructor(
     val listSeasonsCurrentMovie = MutableStateFlow<ArrayList<SeasonsItem>>(arrayListOf())
     val listCurrentMovieCast = MutableStateFlow<ArrayList<CastItem>>(arrayListOf())
 
+    var isMovieFavorite = MutableLiveData(false)
+
     fun getMovie(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             val response = movieRepository.getMovie(id)
@@ -51,5 +53,28 @@ class DetailsViewModel @Inject constructor(
                 listCurrentMovieCast.emit(it)
             }
         }
+    }
+
+    fun addMovieToFavorite(movie: Movie) {
+        viewModelScope.launch(Dispatchers.IO) {
+            movie.isFavorite = true
+            movieRepository.insertMovieToFavorite(movie)
+        }
+    }
+
+    fun deleteMovieFromFavorite(movie: Movie) {
+        viewModelScope.launch(Dispatchers.IO) {
+            movie.isFavorite = false
+            movieRepository.deleteMovieFromFavorite(movie)
+        }
+    }
+
+    fun chooseMovieFavorite(movie: Movie) {
+        if (isMovieFavorite.value == true) {
+            deleteMovieFromFavorite(movie)
+        } else {
+            addMovieToFavorite(movie)
+        }
+        isMovieFavorite.value = !(isMovieFavorite.value ?: true)
     }
 }
