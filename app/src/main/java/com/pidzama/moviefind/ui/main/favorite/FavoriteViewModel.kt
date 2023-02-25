@@ -4,22 +4,21 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pidzama.moviefind.data.model.movies.Movie
-import com.pidzama.moviefind.repository.FirebaseDatabaseRepository
-import kotlinx.coroutines.Dispatchers
+import com.pidzama.moviefind.repository.MovieRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class FavoriteViewModel(
-    private val databaseRepository: FirebaseDatabaseRepository
+@HiltViewModel
+class FavoriteViewModel @Inject constructor(
+    private val movieRepository: MovieRepository
 ) : ViewModel() {
 
-    val movie = MutableLiveData<Movie>()
+    val listFavouriteMovie = MutableLiveData<List<Movie>>()
 
-    var isFavoriteMovie = MutableLiveData(false)
-
-    fun addMovieToFavorite(movie: Movie) {
-        viewModelScope.launch(Dispatchers.IO) {
-            databaseRepository.addMovieToFavorite(movie)
-
+    fun getListFavouriteHero() {
+        viewModelScope.launch {
+            listFavouriteMovie.value = movieRepository.getListFavoriteMovie()
         }
     }
 }

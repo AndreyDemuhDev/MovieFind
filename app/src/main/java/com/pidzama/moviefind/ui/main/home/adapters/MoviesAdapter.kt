@@ -1,4 +1,4 @@
-package com.pidzama.moviefind.ui.main.movie.adapters
+package com.pidzama.moviefind.ui.main.home.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

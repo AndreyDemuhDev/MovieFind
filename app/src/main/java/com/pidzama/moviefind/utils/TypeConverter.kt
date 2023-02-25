@@ -27,4 +27,6 @@ class TypeConverter {
     fun fromListGenresToString(list: List<String>): String {
         return ""
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.pidzama.moviefind.ui.main.movie
 
+import android.animation.ObjectAnimator
 import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Color
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -18,8 +20,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.pidzama.moviefind.R
 import com.pidzama.moviefind.data.model.cast.CastItem
+import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.data.model.seasons.SeasonsItem
 import com.pidzama.moviefind.databinding.FragmentDetailsBinding
+import com.pidzama.moviefind.repository.SharedPreferenceRepository
 import com.pidzama.moviefind.ui.main.cast.adapter.CastAdapter
 import com.pidzama.moviefind.ui.main.seasons.adapter.SeasonsAdapter
 import com.pidzama.moviefind.utils.showToast
@@ -31,6 +35,8 @@ class DetailsMovieFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
     private val args: DetailsMovieFragmentArgs by navArgs()
     private val viewModel: DetailsViewModel by viewModels()
+    lateinit var likeMovie: Movie
+    private var isFavouriteHeroIcon = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +55,19 @@ class DetailsMovieFragment : Fragment() {
         }
 
         binding.buttonAddFavorite.setOnClickListener {
-
+            val saveShared = SharedPreferenceRepository(requireContext())
+            if (!likeMovie.isFavorite) {
+                binding.buttonAddFavorite.setImageResource(R.drawable.ic_done)
+                saveShared.setFavourite(likeMovie.id.toString(), true)
+                viewModel.chooseMovieFavorite(likeMovie)
+                requireContext().showToast(R.string.movie_add_favorite)
+            } else {
+                binding.buttonAddFavorite.setImageResource(R.drawable.ic_favoritepage)
+                saveShared.setFavourite(likeMovie.id.toString(), false)
+                requireContext().showToast(R.string.movie_delete_favorite)
+                viewModel.chooseMovieFavorite(likeMovie)
+            }
+            ObjectAnimator.ofFloat(binding.buttonAddFavorite, View.ALPHA, 0.3F, 1F).start()
         }
 
         binding.buttonDownload.setOnClickListener {
@@ -72,7 +90,9 @@ class DetailsMovieFragment : Fragment() {
         }
 
         viewModel.run {
+            val saveShared = SharedPreferenceRepository(requireContext())
             currentMovie.observe(viewLifecycleOwner) {
+                likeMovie = it
                 Glide.with(requireContext())
                     .load(it.image?.medium)
                     .centerCrop()
@@ -91,6 +111,14 @@ class DetailsMovieFragment : Fragment() {
                 binding.movieRatingImage.rating = it.rating.average.toFloat() / 2
                 setColorStatus()
                 binding.statusMovie.text = it.status
+                val booleanFavourite = saveShared.getFavourite(likeMovie.id.toString())
+                if (isFavouriteHeroIcon != booleanFavourite) {
+                    binding.buttonAddFavorite.setImageResource(R.drawable.ic_done)
+                    isFavouriteHeroIcon = true
+                } else {
+                    binding.buttonAddFavorite.setImageResource(R.drawable.ic_favoritepage)
+                    isFavouriteHeroIcon = false
+                }
             }
         }
 
@@ -152,7 +180,6 @@ class DetailsMovieFragment : Fragment() {
         }
     }
 
-
     private fun setColorStatus() {
         when (args.statusMovie) {
             "Ended" -> {
@@ -178,5 +205,4 @@ class DetailsMovieFragment : Fragment() {
             .create()
             .show()
     }
-
 }

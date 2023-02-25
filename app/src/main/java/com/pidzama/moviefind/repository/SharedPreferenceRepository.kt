@@ -24,4 +24,12 @@ class SharedPreferenceRepository @Inject constructor(
             putBoolean(IS_FIRST_START, false)
         }
     }
+
+    fun setFavourite(key: String, value: Boolean) {
+        globalPreference.edit().putBoolean(key, value).apply()
+    }
+
+    fun getFavourite(key: String): Boolean {
+        return globalPreference.getBoolean(key, false)
+    }
 }
