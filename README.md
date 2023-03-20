@@ -3,7 +3,11 @@
 <img width="200" height="200" src="https://github.com/AndreyDemuhDev/MovieFind/blob/master/logo_mf.png">
 </p>
 
+<div id="header" align="center">
+<img src=  https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white />
+<img src=  https://img.shields.io/badge/Kotlin-0095D5?&style=flat&logo=kotlin&logoColor=white />
 <img src= https://img.shields.io/badge/API-24%2B-success/>
+  </div>
 
 <b>MovieFind</b> - это Android-приложение со списком сериалов и подробной информации и них (актерский состав, описание сезонов, серий и тд.)
 
