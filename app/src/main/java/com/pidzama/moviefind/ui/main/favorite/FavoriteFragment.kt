@@ -1,10 +1,10 @@
 package com.pidzama.moviefind.ui.main.favorite
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +20,7 @@ class FavoriteFragment : Fragment() {
     private val viewModel: FavoriteViewModel by viewModels()
     private lateinit var recyclerFavouriteMovie: RecyclerView
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,7 +31,9 @@ class FavoriteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initFavouriteMovie()
+
     }
 
     private fun initFavouriteMovie() {
@@ -38,26 +41,33 @@ class FavoriteFragment : Fragment() {
         recyclerFavouriteMovie = binding.recyclerFavorite
         recyclerFavouriteMovie.run {
             if (adapter == null) {
-                adapter = FavoriteMovieAdapter{
+                adapter = FavoriteMovieAdapter {
                     findNavController().navigate(
                         FavoriteFragmentDirections
                             .actionFavoriteFragmentToDetailsFragment(
-                            it.name,
-                            it.id,
-                            it.rating.average.toLong(),
-                            it.summary,
-                            it.premiered,
-                            arrayOf(it.genres.take(2).toString()),
-                            it.officialSite,
-                            it.url,
-                            it.status
-                        )
+                                it.name,
+                                it.id,
+                                it.rating.average.toLong(),
+                                it.summary,
+                                it.premiered,
+                                arrayOf(it.genres.take(2).toString()),
+                                it.officialSite,
+                                it.url,
+                                it.status
+                            )
                     )
                 }
                 layoutManager = LinearLayoutManager(requireContext())
             }
             viewModel.listFavouriteMovie.observe(viewLifecycleOwner) { list ->
                 (recyclerFavouriteMovie.adapter as FavoriteMovieAdapter).setListFavouriteMovie(list)
+                if (list.isEmpty()) {
+                    binding.textNoFiles.visibility = View.VISIBLE
+                    binding.emptyListImage.visibility = View.VISIBLE
+                } else {
+                    binding.textNoFiles.visibility = View.GONE
+                    binding.emptyListImage.visibility = View.GONE
+                }
             }
         }
     }

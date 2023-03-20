@@ -2,6 +2,7 @@ package com.pidzama.moviefind.ui.main.favorite.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.pidzama.moviefind.R
 import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.databinding.ItemMovieFullBinding
 
@@ -19,6 +20,7 @@ class FavoriteViewHolder(
             runtimeMovieItem.text = movie.runtime.toString()
             premieredMovieItem.text = movie.premiered
             rating.text = movie.rating.average.toString()
+            iconFavorite.setImageResource(R.drawable.add_favorite)
         }
     }
 }

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "103600642207",
-    "project_id": "moviefind-e11d1",
-    "storage_bucket": "moviefind-e11d1.appspot.com"
+    "project_number": "1026682972768",
+    "project_id": "moviefind-7ff73",
+    "storage_bucket": "moviefind-7ff73.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:103600642207:android:050cb5ca6f4a9328bc6aaa",
+        "mobilesdk_app_id": "1:1026682972768:android:147fd29698d45c1b06b105",
         "android_client_info": {
           "package_name": "com.pidzama.moviefind"
         }
       },
       "oauth_client": [
         {
-          "client_id": "103600642207-vodc3ohbuklog6l9j07ri5llshnf3lg0.apps.googleusercontent.com",
+          "client_id": "1026682972768-o4sm09bd99ejvs3tnrk04sb6k352stav.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzP28Xpws574s1tnf1qBh_g7QwtNck9So"
+          "current_key": "AIzaSyCXM9dOyMoqNLPZkqaJ3_mYSH6PnmAR1-k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "103600642207-vodc3ohbuklog6l9j07ri5llshnf3lg0.apps.googleusercontent.com",
+              "client_id": "1026682972768-o4sm09bd99ejvs3tnrk04sb6k352stav.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

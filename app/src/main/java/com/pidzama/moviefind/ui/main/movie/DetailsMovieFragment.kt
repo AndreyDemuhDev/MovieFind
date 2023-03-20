@@ -1,9 +1,10 @@
 package com.pidzama.moviefind.ui.main.movie
 
 import android.animation.ObjectAnimator
-import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.text.Html
@@ -11,7 +12,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.Button
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -26,6 +27,7 @@ import com.pidzama.moviefind.databinding.FragmentDetailsBinding
 import com.pidzama.moviefind.repository.SharedPreferenceRepository
 import com.pidzama.moviefind.ui.main.cast.adapter.CastAdapter
 import com.pidzama.moviefind.ui.main.seasons.adapter.SeasonsAdapter
+import com.pidzama.moviefind.utils.StatusMovie
 import com.pidzama.moviefind.utils.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -57,7 +59,7 @@ class DetailsMovieFragment : Fragment() {
         binding.buttonAddFavorite.setOnClickListener {
             val saveShared = SharedPreferenceRepository(requireContext())
             if (!likeMovie.isFavorite) {
-                binding.buttonAddFavorite.setImageResource(R.drawable.ic_done)
+                binding.buttonAddFavorite.setImageResource(R.drawable.add_favorite)
                 saveShared.setFavourite(likeMovie.id.toString(), true)
                 viewModel.chooseMovieFavorite(likeMovie)
                 requireContext().showToast(R.string.movie_add_favorite)
@@ -112,12 +114,12 @@ class DetailsMovieFragment : Fragment() {
                 setColorStatus()
                 binding.statusMovie.text = it.status
                 val booleanFavourite = saveShared.getFavourite(likeMovie.id.toString())
-                if (isFavouriteHeroIcon != booleanFavourite) {
-                    binding.buttonAddFavorite.setImageResource(R.drawable.ic_done)
-                    isFavouriteHeroIcon = true
+                isFavouriteHeroIcon = if (isFavouriteHeroIcon != booleanFavourite) {
+                    binding.buttonAddFavorite.setImageResource(R.drawable.add_favorite)
+                    true
                 } else {
                     binding.buttonAddFavorite.setImageResource(R.drawable.ic_favoritepage)
-                    isFavouriteHeroIcon = false
+                    false
                 }
             }
         }
@@ -182,27 +184,29 @@ class DetailsMovieFragment : Fragment() {
 
     private fun setColorStatus() {
         when (args.statusMovie) {
-            "Ended" -> {
+            StatusMovie.ENDED.status -> {
                 binding.statusMovie.setTextColor(Color.parseColor("#fe0036"))
             }
-            "Running" -> {
+            StatusMovie.RUNNING.status -> {
                 binding.statusMovie.setTextColor(Color.parseColor("#12931F"))
             }
-            "To Be Determined" -> {
+            StatusMovie.TO_BE_DETERMINED.status -> {
                 binding.statusMovie.setTextColor(Color.parseColor("#FFFFFFFF"))
             }
         }
     }
 
     private fun showAlertDialog() {
-        AlertDialog.Builder(requireContext())
-            .setCancelable(false)
-            .setTitle(R.string.sorry)
-            .setMessage(R.string.video_not_available)
-            .setNegativeButton(R.string.OK) { _, _ ->
-                requireContext().showToast(R.string.thanks)
-            }
-            .create()
-            .show()
+        val dialog = Dialog(requireContext())
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.info_alert_dialog)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val btnOK: Button = dialog.findViewById(R.id.button_ok)
+
+        btnOK.setOnClickListener {
+            dialog.dismiss()
+            requireContext().showToast(R.string.thanks)
+        }
+        dialog.show()
     }
 }
