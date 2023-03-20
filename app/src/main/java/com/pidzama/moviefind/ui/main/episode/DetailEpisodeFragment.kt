@@ -1,13 +1,16 @@
 package com.pidzama.moviefind.ui.main.episode
 
-import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -49,11 +52,11 @@ class DetailEpisodeFragment : Fragment() {
         }
 
         binding.buttonPlay.setOnClickListener {
-            createAlertDialog()
+            showAlertDialog()
         }
 
         binding.buttonDownload.setOnClickListener {
-            createAlertDialog()
+            showAlertDialog()
         }
 
         viewModelEpisode.run {
@@ -75,16 +78,18 @@ class DetailEpisodeFragment : Fragment() {
         viewModelEpisode.getOneEpisode(args.idEpisode)
     }
 
-    private fun createAlertDialog() {
-        AlertDialog.Builder(requireContext())
-            .setCancelable(false)
-            .setTitle(R.string.sorry)
-            .setMessage(R.string.video_not_available)
-            .setNegativeButton(R.string.OK) { _, _ ->
-                requireContext().showToast(R.string.thanks)
-            }
-            .create()
-            .show()
+    private fun showAlertDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.info_alert_dialog)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val btnOK: Button = dialog.findViewById(R.id.button_ok)
+
+        btnOK.setOnClickListener {
+            dialog.dismiss()
+            requireContext().showToast(R.string.thanks)
+        }
+        dialog.show()
     }
 
 }

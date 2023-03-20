@@ -56,8 +56,6 @@ class CastFragment : Fragment() {
             }
         }
         viewModel.getInfoPerson(args.idPerson)
-
-
     }
 
 }

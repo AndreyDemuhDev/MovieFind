@@ -15,5 +15,4 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/splash_nav_graph" />
 
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

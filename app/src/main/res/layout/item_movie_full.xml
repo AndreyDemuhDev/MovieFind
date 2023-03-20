@@ -109,6 +109,7 @@
             tools:text="Premiered" />
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/icon_favorite"
             android:layout_width="@dimen/dp_40"
             android:layout_height="@dimen/dp_40"
             android:layout_marginTop="@dimen/dp_10"
