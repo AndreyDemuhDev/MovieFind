@@ -3,6 +3,8 @@
 <img width="200" height="200" src="https://github.com/AndreyDemuhDev/MovieFind/blob/master/logo_mf.png">
 </p>
 
+<img src= https://img.shields.io/badge/API-24%2B-success/>
+
 <b>MovieFind</b> - это Android-приложение со списком сериалов и подробной информации и них (актерский состав, описание сезонов, серий и тд.)
 
 Это приложение создано с использованием следующих технологий:
