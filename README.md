@@ -1,9 +1,9 @@
-﻿# MovieFind
 
-<img src="https://komarev.com/ghpvc/?username=AndreyDemuhDev&style=flat-square&color=blue" alt=""/>
+<p align="center">
+<img width="200" height="200" src="https://github.com/AndreyDemuhDev/MovieFind/blob/master/logo_mf.png">
+</p>
 
-<b>MovieFind</b>
-Android-приложение со списком фильмов и подробностями о фильмах
+<b>MovieFind</b> - это Android-приложение со списком сериалов и подробной информации и них (актерский состав, описание сезонов, серий и тд.)
 
 Это приложение создано с использованием следующих технологий:
 
