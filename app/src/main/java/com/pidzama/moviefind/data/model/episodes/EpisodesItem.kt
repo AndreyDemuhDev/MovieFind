@@ -16,3 +16,25 @@ data class EpisodesItem(
     val type: String,
     val url: String
 )
+
+data class Image(
+    val medium: String?,
+    val original: String?
+)
+
+data class Links(
+    val self: Self,
+    val show: Show
+)
+
+data class Rating(
+    val average: Double
+)
+
+data class Self(
+    val href: String
+)
+
+data class Show(
+    val href: String
+)
