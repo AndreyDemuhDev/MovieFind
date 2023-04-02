@@ -4,17 +4,19 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pidzama.moviefind.data.model.movies.Movie
+import com.pidzama.moviefind.data.model.search.SearchItem
+import com.pidzama.moviefind.data.model.search.Show
 import com.pidzama.moviefind.databinding.ItemMovieBinding
 
 class SearchAdapter(
-    private val onClick: (movie: Movie) -> Unit
+    private val onClick: (movie: SearchItem) -> Unit
 ) : RecyclerView.Adapter<SearchViewHolder>() {
 
-    private val listMovie = ArrayList<Movie>()
+    private val listMovie = ArrayList<SearchItem>()
 
-    fun setList(movie: Movie) {
+    fun setList(movie: ArrayList<SearchItem>) {
         listMovie.clear()
-        listMovie.add(movie)
+        listMovie.addAll(movie)
         notifyDataSetChanged()
     }
 

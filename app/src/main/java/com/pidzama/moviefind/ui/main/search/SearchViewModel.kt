@@ -5,7 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.pidzama.moviefind.data.model.movies.Movie
+import com.pidzama.moviefind.data.model.search.SearchItem
+import com.pidzama.moviefind.data.model.search.Show
 import com.pidzama.moviefind.repository.MovieRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -16,7 +17,7 @@ class SearchViewModel @Inject constructor(
     private val movieRepository: MovieRepository,
 ) : ViewModel() {
 
-    val listSearchMovie = MutableLiveData<Movie>()
+    val listSearchMovie = MutableLiveData<ArrayList<SearchItem>>()
 
     @SuppressLint("SuspiciousIndentation")
     fun setSearchMovie(query: String) {
@@ -30,8 +31,7 @@ class SearchViewModel @Inject constructor(
         }
     }
 
-    fun getSearchMovie(): LiveData<Movie> {
+    fun getSearchMovie(): LiveData<ArrayList<SearchItem>> {
         return listSearchMovie
     }
-
 }

@@ -4,6 +4,8 @@ import com.pidzama.moviefind.data.model.cast.CastItem
 import com.pidzama.moviefind.data.model.cast.Person
 import com.pidzama.moviefind.data.model.episodes.EpisodesItem
 import com.pidzama.moviefind.data.model.movies.Movie
+import com.pidzama.moviefind.data.model.search.SearchItem
+import com.pidzama.moviefind.data.model.search.Show
 import com.pidzama.moviefind.data.model.seasons.SeasonsItem
 
 import retrofit2.Response
@@ -19,10 +21,10 @@ interface ApiService {
         @Query("limit") limit: Int? = 100
     ): Response<List<Movie>>
 
-    @GET("singlesearch/shows")
+    @GET("search/shows")
     suspend fun getSearchMovies(
         @Query("q") query: String
-    ): Response<Movie>
+    ): Response<ArrayList<SearchItem>>
 
     @GET("shows/{id}")
     suspend fun getMovie(@Path("id") id: Int): Response<Movie>
