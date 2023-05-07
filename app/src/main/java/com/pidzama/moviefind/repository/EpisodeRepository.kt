@@ -22,5 +22,4 @@ class EpisodeRepository @Inject constructor(private val apiService: ApiService) 
                 emit(arrayListOf())
             }
         }.flowOn(Dispatchers.IO)
-
 }

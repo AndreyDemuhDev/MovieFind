@@ -60,5 +60,4 @@ class AuthorisationViewModel : ViewModel() {
             authRepository.logout()
         }
     }
-
 }

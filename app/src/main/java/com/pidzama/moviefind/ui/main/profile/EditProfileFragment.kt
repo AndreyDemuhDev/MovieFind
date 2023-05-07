@@ -56,8 +56,6 @@ class EditProfileFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
         storage = FirebaseStorage.getInstance()
-
-
         dialog = AlertDialog.Builder(requireContext())
             .setMessage(R.string.please_wait)
             .setCancelable(false)
@@ -68,11 +66,9 @@ class EditProfileFragment : Fragment() {
             intent.type = "image/*"
             startActivityForResult(intent, 1)
         }
-
         binding.buttonSaveChange.setOnClickListener {
             uploadData()
         }
-
 
         val activityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
@@ -86,7 +82,6 @@ class EditProfileFragment : Fragment() {
                     .show()
             }
         }
-
         binding.buttonChangePhoto.setOnClickListener {
             val photoPicker = Intent(Intent.ACTION_GET_CONTENT)
             photoPicker.type = "image/*"
@@ -94,31 +89,23 @@ class EditProfileFragment : Fragment() {
         }
         binding.buttonSaveChange.setOnClickListener {
             saveData()
-
         }
-
         binding.emailText.text = viewModel.getEmail()
-
         binding.buttonBack.setOnClickListener {
             findNavController().popBackStack()
         }
-
         binding.buttonName.setOnClickListener {
             showChangeParametersUserName()
         }
-
         binding.buttonAge.setOnClickListener {
             showChangeParametersUserAge()
         }
-
         binding.buttonCountry.setOnClickListener {
             showChangeParametersUserCountry()
         }
-
         binding.buttonPhone.setOnClickListener {
             showChangeParametersUserPhone()
         }
-
     }
 
     private fun saveData() {
@@ -298,5 +285,4 @@ class EditProfileFragment : Fragment() {
             }
         }
     }
-
 }

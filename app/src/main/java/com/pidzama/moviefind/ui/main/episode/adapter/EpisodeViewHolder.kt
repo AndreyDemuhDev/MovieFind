@@ -12,17 +12,12 @@ class EpisodeViewHolder(
 
     fun bind(episode: EpisodesItem) {
         binding.run {
-            if (episode.image?.medium == null) {
-                imageEpisode.setImageResource(R.drawable.ic_no_image)
-            } else {
-                Glide.with(imageEpisode)
-                    .load(episode.image.medium)
-                    .into(imageEpisode)
-            }
+            Glide.with(imageEpisode)
+                .load(episode.image?.original ?: R.drawable.ic_no_image)
+                .into(imageEpisode)
             nameEpisode.text = episode.name
             episodeNumber.text = episode.number.toString()
             ratingEpisode.text = episode.rating.average.toString()
-
         }
     }
 }

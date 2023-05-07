@@ -38,5 +38,4 @@ class SearchAdapter(
     }
 
     override fun getItemCount(): Int = listMovie.size
-
 }

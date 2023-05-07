@@ -27,7 +27,6 @@ class SeasonsAdapter(
             holder.itemView.setOnClickListener {
                 onClick(seasons)
             }
-
         }
     }
 }

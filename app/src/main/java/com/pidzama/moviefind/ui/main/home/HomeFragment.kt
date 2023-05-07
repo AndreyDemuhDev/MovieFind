@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
+import com.pidzama.moviefind.R
 import com.pidzama.moviefind.data.model.movies.Movie
 import com.pidzama.moviefind.databinding.FragmentHomeBinding
 import com.pidzama.moviefind.ui.main.home.adapters.MoviesAdapter
@@ -43,11 +44,11 @@ class HomeFragment : Fragment() {
                 initMovieAdapter(pagingData)
             }
         }
-
         (binding.recyclerMovie.adapter as? MoviesAdapter)?.addLoadStateListener { state ->
             binding.progress.isVisible = state.refresh == LoadState.Loading
         }
         binding.emailUser.text = authViewModel.getEmail()
+        binding.imageUser.setImageResource(R.drawable.users_ic)
     }
 
     private suspend fun initMovieAdapter(list: PagingData<Movie>) {
@@ -74,5 +75,4 @@ class HomeFragment : Fragment() {
         }
         viewModel.getAllMovies()
     }
-
 }

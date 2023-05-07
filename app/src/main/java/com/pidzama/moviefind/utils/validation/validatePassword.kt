@@ -28,5 +28,4 @@ fun validatePassword(password: String): ValidationResult {
         }
         else -> Valid
     }
-
 }

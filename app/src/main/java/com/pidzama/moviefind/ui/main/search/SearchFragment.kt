@@ -37,11 +37,9 @@ class SearchFragment : Fragment() {
         viewModelSearch.listSearchMovie.observe(viewLifecycleOwner) {
             setListSearchMovie(it)
         }
-
         binding.buttonSearch.setOnClickListener {
             searchMovie()
         }
-
         binding.searchField.setOnKeyListener { _, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 searchMovie()

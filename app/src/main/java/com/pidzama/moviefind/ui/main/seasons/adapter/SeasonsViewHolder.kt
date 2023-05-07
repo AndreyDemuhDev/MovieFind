@@ -12,12 +12,8 @@ class SeasonsViewHolder(
 
     fun bind(seasons: SeasonsItem) {
         binding.numberSeason.text = seasons.number.toString()
-        if (seasons.image?.original == null) {
-            binding.imageSeason.setImageResource(R.drawable.ic_no_image)
-        } else {
-            Glide.with(binding.imageSeason)
-                .load(seasons.image.original)
-                .into(binding.imageSeason)
-        }
+        Glide.with(binding.imageSeason)
+            .load(seasons.image?.medium ?: R.drawable.ic_no_image)
+            .into(binding.imageSeason)
     }
 }

@@ -31,5 +31,4 @@ class TabsFragment : Fragment() {
         val navController = navHost.navController
         NavigationUI.setupWithNavController(binding.bottomNavMenu, navController)
     }
-
 }

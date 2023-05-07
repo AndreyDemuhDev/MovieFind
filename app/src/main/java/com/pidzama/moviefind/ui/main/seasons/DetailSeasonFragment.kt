@@ -41,13 +41,9 @@ class DetailSeasonFragment : Fragment() {
 
         viewModelSeason.run {
             currentOneSeasonsMovie.observe(viewLifecycleOwner) {
-                if (it.image?.medium == null) {
-                    binding.imageSeason.setImageResource(R.drawable.ic_no_image)
-                } else {
-                    Glide.with(binding.imageSeason)
-                        .load(it.image.medium)
-                        .into(binding.imageSeason)
-                }
+                Glide.with(binding.imageSeason)
+                    .load(it.image?.medium ?: R.drawable.ic_no_image)
+                    .into(binding.imageSeason)
                 binding.seasonNumber.text = it.number.toString()
                 binding.numberEpisode.text = it.episodeOrder.toString()
             }

@@ -14,6 +14,5 @@ class Constants {
     object Firebase {
         const val PATH_USER = "User"
         const val PATH_FAVORITE = "Favorite"
-
     }
 }

@@ -8,7 +8,7 @@
     app:cardCornerRadius="@dimen/dp_12"
     app:cardElevation="@dimen/dp_8"
     app:strokeColor="@color/red"
-    app:strokeWidth="@dimen/dp_2">
+    app:strokeWidth="@dimen/dp_3">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,6 +44,7 @@
             android:layout_marginTop="@dimen/dp_10"
             android:background="@drawable/button_error_alert"
             android:text="@string/OK"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_info" />
