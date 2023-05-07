@@ -26,11 +26,9 @@ class CheckSignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.buttonSignUp.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }
-
         binding.buttonSignIn.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }

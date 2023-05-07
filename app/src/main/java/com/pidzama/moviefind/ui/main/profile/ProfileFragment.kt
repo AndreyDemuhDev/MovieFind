@@ -49,10 +49,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.nametext.text = viewModelAuth.getName()
-
-
     }
-
     /**
      * Функция которая переопряделяет нафигационный контейнер
      */

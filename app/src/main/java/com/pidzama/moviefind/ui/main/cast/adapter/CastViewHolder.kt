@@ -15,7 +15,7 @@ class CastViewHolder(
             nameStar.text = cast.person.name
             character.text = cast.character.name
             Glide.with(photoStar)
-                .load(cast.person.image?.medium)
+                .load(cast.person.image?.original)
                 .into(photoStar)
         }
     }

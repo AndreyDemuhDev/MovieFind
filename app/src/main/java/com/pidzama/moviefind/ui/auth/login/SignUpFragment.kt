@@ -33,7 +33,6 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.login.setOnClickListener {
             if (validate()) {
                 authViewModel.registrationUser(
@@ -49,7 +48,6 @@ class SignUpFragment : Fragment() {
                 requireContext().showToast(R.string.registration_failed)
             }
         }
-
         binding.buttonBack.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -109,5 +107,4 @@ class SignUpFragment : Fragment() {
             }
         } ?: return null
     }
-
 }

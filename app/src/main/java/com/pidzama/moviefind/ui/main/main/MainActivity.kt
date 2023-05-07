@@ -76,11 +76,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getMainNavigationGraphId(): Int = R.navigation.main_nav_graph
-
     private fun getTabsDestination(): Int = R.id.tabsFragment
-
     private fun getSignInDestination(): Int = R.id.signInFragment
-
     private fun getViewPagerDestination(): Int = R.id.viewPagerFragment
-
 }

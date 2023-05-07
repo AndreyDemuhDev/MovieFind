@@ -46,7 +46,6 @@ class DetailsMovieFragment : Fragment() {
     ): View {
         binding = FragmentDetailsBinding.inflate(layoutInflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -71,17 +70,14 @@ class DetailsMovieFragment : Fragment() {
             }
             ObjectAnimator.ofFloat(binding.buttonAddFavorite, View.ALPHA, 0.3F, 1F).start()
         }
-
         binding.buttonDownload.setOnClickListener {
             showAlertDialog()
         }
-
         binding.buttonWebSite.setOnClickListener {
             val address: Uri = Uri.parse(args.officialSite)
             val linkIntent = Intent(Intent.ACTION_VIEW, address)
             startActivity(linkIntent)
         }
-
         binding.buttonShare.setOnClickListener {
             val sendLink = args.urlShow
             val intent = Intent(Intent.ACTION_SEND)
@@ -90,7 +86,6 @@ class DetailsMovieFragment : Fragment() {
             val chosenIntent = Intent.createChooser(intent, resources.getText(R.string.choose_app))
             startActivity(chosenIntent)
         }
-
         viewModel.run {
             val saveShared = SharedPreferenceRepository(requireContext())
             currentMovie.observe(viewLifecycleOwner) {
@@ -123,19 +118,16 @@ class DetailsMovieFragment : Fragment() {
                 }
             }
         }
-
         lifecycleScope.launchWhenStarted {
             viewModel.listSeasonsCurrentMovie.collect {
                 setListSeasons(it)
             }
         }
-
         lifecycleScope.launchWhenStarted {
             viewModel.listCurrentMovieCast.collect {
                 setListCast(it)
             }
         }
-
         viewModel.getMovie(args.idMovie)
         viewModel.getSeasonsMovie(args.idMovie)
         viewModel.getCastMovie(args.idMovie)

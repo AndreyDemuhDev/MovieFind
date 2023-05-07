@@ -34,8 +34,6 @@ class CastFragment : Fragment() {
         binding.buttonBack.setOnClickListener {
             findNavController().popBackStack()
         }
-
-
         viewModel.run {
             currentPerson.observe(viewLifecycleOwner) {
                 Glide.with(requireContext())
@@ -57,5 +55,4 @@ class CastFragment : Fragment() {
         }
         viewModel.getInfoPerson(args.idPerson)
     }
-
 }

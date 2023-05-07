@@ -43,12 +43,10 @@ class SignInFragment : Fragment() {
                         binding.errorText.text = resources.getText(R.string.no_user_with_email)
                     }
                 )
-
             } else {
                 requireContext().showToast(R.string.sign_in_failed)
             }
         }
-
         binding.buttonBack.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -91,5 +89,4 @@ class SignInFragment : Fragment() {
             }
         } ?: return null
     }
-
 }

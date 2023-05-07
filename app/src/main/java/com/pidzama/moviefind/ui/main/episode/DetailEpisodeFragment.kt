@@ -54,15 +54,13 @@ class DetailEpisodeFragment : Fragment() {
         binding.buttonPlay.setOnClickListener {
             showAlertDialog()
         }
-
         binding.buttonDownload.setOnClickListener {
             showAlertDialog()
         }
-
         viewModelEpisode.run {
             currentOneEpisode.observe(viewLifecycleOwner) {
                 Glide.with(requireContext())
-                    .load(it.image?.medium)
+                    .load(it.image?.medium ?: R.drawable.ic_no_image)
                     .into(binding.imageEpisode)
                 binding.numberEpisodeText.text = it.number.toString()
                 binding.numberSeasonText.text = it.season.toString()
@@ -91,5 +89,4 @@ class DetailEpisodeFragment : Fragment() {
         }
         dialog.show()
     }
-
 }

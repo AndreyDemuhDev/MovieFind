@@ -98,5 +98,4 @@ class FirebaseAuthRepository {
                 it.message
             }
     }
-
 }

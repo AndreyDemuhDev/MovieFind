@@ -39,5 +39,4 @@ class ViewPagerFragment : Fragment() {
             findNavController().navigate(R.id.signInFragment)
         }
     }
-
 }
