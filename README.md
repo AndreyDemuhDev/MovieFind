@@ -28,5 +28,6 @@
 и др.
 
  ## Превью проекта
+ Прошу прощение за качество :worried:
  
 ![image](https://github.com/AndreyDemuhDev/MovieFind/blob/master/preview_movie_find_app.gif)
