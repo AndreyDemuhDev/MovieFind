@@ -28,4 +28,5 @@
 и др.
 
  ## Превью проекта
-
+ 
+![image](https://github.com/AndreyDemuhDev/MovieFind/blob/master/preview_movie_find.gif)
