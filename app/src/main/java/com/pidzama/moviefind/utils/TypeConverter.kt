@@ -6,17 +6,6 @@ import com.google.gson.reflect.TypeToken
 import com.pidzama.moviefind.data.model.movies.Links
 
 class TypeConverter {
-    @TypeConverter
-    fun fromString(value: String): ArrayList<String> {
-        val listType = object : TypeToken<ArrayList<String>>() {}.type
-        return Gson().fromJson(value, listType)
-    }
-
-    @TypeConverter
-    fun fromListList(list: ArrayList<String>): String {
-        val gson = Gson()
-        return gson.toJson(list)
-    }
 
     @TypeConverter
     fun fromStringToListGenres(value: String): List<String> {

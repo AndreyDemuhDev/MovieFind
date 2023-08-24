@@ -24,7 +24,11 @@ class CastFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCastBinding.inflate(layoutInflater, container, false)
+        binding = FragmentCastBinding.inflate(
+            layoutInflater,
+            container,
+            false
+        )
         return binding.root
     }
 

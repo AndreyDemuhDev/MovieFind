@@ -1,7 +1,5 @@
 package com.pidzama.moviefind.data.model.seasons
 
-import java.io.Serializable
-
 data class SeasonsItem(
     val _links: Links,
     val endDate: String,
@@ -15,7 +13,7 @@ data class SeasonsItem(
     val summary: String,
     val url: String,
     val webChannel: Any
-): Serializable
+)
 
 data class Country(
     val code: String,

@@ -31,7 +31,11 @@ class DetailEpisodeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDetailEpisodeBinding.inflate(layoutInflater, container, false)
+        binding = FragmentDetailEpisodeBinding.inflate(
+            layoutInflater,
+            container,
+            false
+        )
         return binding.root
     }
 

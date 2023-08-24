@@ -55,7 +55,7 @@ data class Movie(
     val weight: Int,
     @ColumnInfo(name = "isFavorite")
     var isFavorite: Boolean = false
-) : Serializable
+)
 
 data class Country(
     @ColumnInfo(name = "code")
@@ -67,11 +67,11 @@ data class Country(
 )
 
 data class Externals(
-    @ColumnInfo(name ="imdb")
+    @ColumnInfo(name = "imdb")
     val imdb: String,
-    @ColumnInfo(name ="thetvdb")
+    @ColumnInfo(name = "thetvdb")
     val thetvdb: Int,
-    @ColumnInfo(name ="tvrage")
+    @ColumnInfo(name = "tvrage")
     val tvrage: Int
 )
 

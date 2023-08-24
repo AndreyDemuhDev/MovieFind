@@ -15,8 +15,7 @@ class MovieRepository @Inject constructor(
 
     suspend fun getMovie(id: Int) = apiService.getMovie(id)
 
-    suspend fun getSearchMovie(query: String) =
-        apiService.getSearchMovies(query)
+    suspend fun getSearchMovie(query: String) = apiService.getSearchMovies(query)
 
     suspend fun insertMovieToFavorite(movie: Movie) {
         movieDao.addMovieToFavorite(movie)

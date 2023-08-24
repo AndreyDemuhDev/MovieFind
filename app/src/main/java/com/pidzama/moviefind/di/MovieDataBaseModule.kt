@@ -15,7 +15,7 @@ import dagger.hilt.components.SingletonComponent
 object MovieDataBaseModule {
 
     @Provides
-    fun provideDB(@ApplicationContext context: Context) : AppDataBase {
+    fun provideDB(@ApplicationContext context: Context): AppDataBase {
         return Room.databaseBuilder(
             context,
             AppDataBase::class.java,
