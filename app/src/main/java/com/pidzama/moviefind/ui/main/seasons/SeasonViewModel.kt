@@ -36,7 +36,7 @@ class SeasonViewModel @Inject constructor(
 
     fun getAllEpisodesMovie(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            episodeRepository.getAllEpisodesSeason(id).collect() {
+            episodeRepository.getAllEpisodesSeason(id).collect {
                 listAllEpisodesSeason.emit(it)
             }
         }

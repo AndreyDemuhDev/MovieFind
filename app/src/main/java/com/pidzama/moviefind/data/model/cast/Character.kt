@@ -1,7 +1,5 @@
 package com.pidzama.moviefind.data.model.cast
 
-import java.io.Serializable
-
 data class Character(
     val _links: Links,
     val id: Int,
@@ -15,7 +13,7 @@ data class CastItem(
     val person: Person,
     val self: Boolean,
     val voice: Boolean
-): Serializable
+)
 
 data class Country(
     val code: String,
