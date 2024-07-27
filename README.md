@@ -18,7 +18,7 @@
 1. Приложение написанно на языке программирования <b>Kotlin</b>.
 2. Используемый архитектурный паттерн <b>MVVM</b> (Model View View Model).
 3. Инъекция зависимостей с применением библиотеки <b>Hilt</b>.
-4. <b>Firebase</b> (FirebaseDatabase, FirebaseStorage, FirebaseAuth) для регистрации учетной записи пользователей, хранения и изменения их данных.
+4. <b>Firebase</b> (FirebaseDatabase, FirebaseStorage, FirebaseAuth) для регистрации/авторизации пользователя, хранения и изменения их данных.
 5. Навигация приложения реализована с помощью <b>Android Jetpack's Navigation component</b>.
 6. Работа с базой данных <b>SQLite</b> через библиотеку <b>Room</b>.
 7. Работа с потоками данных с использованием <b>Flow</b> и <b>Coroutines</b>.
